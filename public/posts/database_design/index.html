@@ -165,7 +165,7 @@ A structure that contains data Organise data through entities, attributes, relat
 Microsoft Access MySql Progres MongoDb (NoSql) Advantages
 more information from same amount of data share our data balancing conflicting requirements controlling redundacy consistency Referential integrity expanding security increasing productivity providing data independence."><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
 <meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="wordCount" content="374">
+<meta itemprop="wordCount" content="691">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -410,8 +410,73 @@ or require instance of entity here also there</p>
 </figure>
 
 <p>Entity Relationship Diagram and Notation</p>
-<h2 id="relational-models">Relational Models</h2>
+<p>(Above from Coursera course)</p>
+<p><a href="https://www.mongodb.com/compare/relational-vs-non-relational-databases">https://www.mongodb.com/compare/relational-vs-non-relational-databases</a></p>
+<h2 id="relational-versus-nosql">Relational versus NoSql</h2>
+<h1 id="rdms">Rdms</h1>
+<p>-Relationships between table (Relational Database)</p>
+<h2 id="advantages">Advantages</h2>
+<h3 id="acid-compliant">Acid Compliant</h3>
+<p>-Atomicity (All or nothing Update) , Consistency and Durability - standard that guarantees the reliability of Database transactions.</p>
+<h3 id="data-accurracy">Data Accurracy</h3>
+<p>primary and foreign keys ensure no duplication</p>
+<h3 id="nomalization">Nomalization</h3>
+<p>Ensuring data is organized in such a way that data anomalies are reduced or eliminated also reduces storage cost</p>
+<h3 id="simplicity">Simplicity</h3>
+<p>English like syntax of sql</p>
+<h2 id="disadvantages">Disadvantages</h2>
+<h3 id="scalability">Scalability</h3>
+<ul>
+<li>Vertical Scaling improve hardware in the machine.</li>
+</ul>
+<h3 id="flexibility">Flexibility</h3>
+<ul>
+<li>Schema is rigid for relational DB</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>tightly linked to the complexity of tables and number
+as well amount of data in each table.</li>
+</ul>
+<h2 id="non-relational-database-or-nosql">Non Relational Database or noSQL</h2>
+<ul>
+<li>Any db that doesnt use tables great for the cloud horizontal scaling involved (Distributed across servers)</li>
+</ul>
+<h3 id="document-databases">Document Databases</h3>
+<p>Documents individual units
+Json like structures that support datatypes.
+db.product.find({&quot;_id&quot;: 23}, {productName: 1, price: 1})
+filter collections of data
+eg mongo DB</p>
+<h3 id="key-value-database">Key Value Database</h3>
+<p>Data accessed from keys simplicity</p>
+<h3 id="graph-databases">Graph Databases</h3>
+<p>Most specialised for of non relational db
+they are flexible because new nodes and edges can easily be added.
+not good at querying the whole as relation arent well defined.</p>
+<h2 id="wide-columns-databases">Wide Columns Databases</h2>
+<p>Considered two dimensional key value stores.</p>
+<h1 id="when-to-use-a-relational-database">When to use a relational Database</h1>
+<ul>
+<li>Project where data is predictable, structure, size and frequency.</li>
+<li>Nomalization can help reduce the size of data on the disk and limiting duplicate data.</li>
+<li>Are the best choice if relationships between enitites are important</li>
+<li>large dataset with a complex structure.</li>
+</ul>
+<h1 id="when-to-use-a-non-relational-database">When to use a non-relational database</h1>
+<ul>
+<li>it your data needs to be flexible given size and shape and be open in the future</li>
+<li>Cloud and scaling</li>
+</ul>
+<pre tabindex="0"><code>Non-relational databases are suitable for both operational and transactional data.
+They are more suitable for unstructured big data.
+Non-relational databases offer higher performance and availability.
+Flexible schema help non-relational databases store more data of varied types that can be changed without major schema changes.
+</code></pre><h2 id="relational-models">Relational Models</h2>
 <h2 id="normalization">Normalization</h2>
+<ul>
+<li>WATCH VIDEO ***</li>
+</ul>
 <h2 id="case-study">Case Study</h2>
 </section>
 
