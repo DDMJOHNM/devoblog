@@ -2,14 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2023-04-06T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/hands_on_architecture/</loc>
+    <lastmod>2023-04-06T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2023-04-06T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/python/</loc>
+    <lastmod>2023-04-06T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/recent_projects/</loc>
+    <lastmod>2023-04-06T16:56:59+13:00</lastmod>
+  </url><url>
     <loc>http://example.org/posts/design_patterns/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>http://example.org/posts/datastructures_algos/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
+    <loc>http://example.org/posts/database_design/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/design_principles/</loc>
+    <lastmod>2022-11-13T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/full_stack_web_dev_go/</loc>
+    <lastmod>2022-11-13T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/grind75/</loc>
+    <lastmod>2022-11-13T16:56:59+13:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/adrs/</loc>
+    <lastmod>2022-10-18T16:56:59+13:00</lastmod>
   </url><url>
     <loc>http://example.org/categories/</loc>
   </url><url>

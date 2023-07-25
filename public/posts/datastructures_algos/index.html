@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Data Structures and Algorithms - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
+Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
+Doubly Linked List package main import ( &#34;fmt&#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &#34;container/heap&#34; &#34;fmt&#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www." />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://example.org/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="http://example.org/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://example.org/github.svg" />
+  
+  <link rel="preload" as="image" href="http://example.org/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://example.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.115.4">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Data Structures and Algorithms" />
+<meta property="og:description" content="Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
+Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
+Doubly Linked List package main import ( &#34;fmt&#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &#34;container/heap&#34; &#34;fmt&#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/datastructures_algos/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
+<meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
+
+  
+  <meta itemprop="name" content="Data Structures and Algorithms">
+<meta itemprop="description" content="Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
+Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
+Doubly Linked List package main import ( &#34;fmt&#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &#34;container/heap&#34; &#34;fmt&#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www."><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="wordCount" content="712">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Structures and Algorithms"/>
+<meta name="twitter:description" content="Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
+Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
+Doubly Linked List package main import ( &#34;fmt&#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &#34;container/heap&#34; &#34;fmt&#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://example.org/"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/YOUR_GITHUB_ID"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/YOUR_LINKEDIN_ID"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Data Structures and Algorithms</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 13, 2022</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="learn-data-structures-and-algorithms-with-golang">Learn Data Structures and Algorithms with Golang</h1>
+<p>Data structure organization of a computers memory, in order to retrive it quickly for processing.</p>
+<h2 id="classification-of-data-structures">Classification of data structures.</h2>
+<p>Linear -Lists, sets, tuples, queues, stacks, and heaps.</p>
+<h3 id="doubly-linked-list">Doubly Linked List</h3>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;fmt&#34;
+)
+
+//connected to two nodes can traverse backward and forward
+
+type Node struct{
+	property int
+	nextNode *Node
+	previousNode *Node	
+
+}
+
+type LinkedList struct{
+	headNode *Node
+}
+
+
+func (linkedList *LinkedList) AddToHead(property int){
+
+}
+
+func (linkedList *LinkedList) IterateList(){
+	
+}
+
+func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{
+
+} 
+
+func main(){
+
+	//add to head method
+	linkedList := LinkedList{}
+	
+	
+}
+</code></pre><h3 id="heaps">Heaps</h3>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;container/heap&#34;
+	&#34;fmt&#34;
+)
+
+//Heaps - data structure based on a heap property
+//used in selection, graph and kway merge alogrithms
+//operations such as finding, insertion keys changes and deleting all perfromed on heaps
+//heap order value is stored at each node is greater than equal to its children
+//order descending max heap otherwise minimum heap
+//not sorted but partial sorted
+//heap structure, heap sorting alogrithm
+//a php example https://www.sitepoint.com/data-structures-3/
+//https://www.w3resource.com/php-exercises/searching-and-sorting-algorithm/searching-and-sorting-algorithm-exercise-2.php
+
+type IntegerHeap []int
+
+func (iheap IntegerHeap) Len() int { return len(iheap) }
+
+func (iheap IntegerHeap) Less(i, j int) bool {
+	return iheap[i] &gt; iheap[j]
+}
+
+func (iheap IntegerHeap) Swap(i, j int) {
+	iheap[i], iheap[j] = iheap[j], iheap[i]
+}
+
+func (iheap *IntegerHeap) Push(heapintf interface{}) {
+	*iheap = append(*iheap, heapintf.(int))
+}
+
+//interheap method pushes the item
+func (iheap *IntegerHeap) Pop() interface{} {
+	var n int
+	var x1 int
+	var previous IntegerHeap = *iheap
+	n = len(previous)
+	x1 = previous[n-1]
+	*iheap = previous[0 : n-1]
+	return x1
+}
+
+//interheap method pops the item from the heap
+
+func main() {
+	var intHeap *IntegerHeap = &amp;IntegerHeap{1, 4, 5}
+	heap.Init(intHeap)
+	heap.Push(intHeap, 2)
+	fmt.Printf(&#34;minumum: %d\n&#34;, (*intHeap)[0])
+	for intHeap.Len() &gt; 0 {
+		fmt.Printf(&#34;d% \n&#34;, heap.Pop(intHeap))
+	}
+
+}
+</code></pre><h3 id="linked-list">Linked List</h3>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;fmt&#34;
+)
+
+type Node struct {
+	property int
+	nextNode *Node
+}
+
+type LinkedList struct {
+	headNode *Node
+}
+
+func (linkedList *LinkedList) AddToHead(property int) {
+	var node = Node{}
+	node.property = property
+
+	if node.nextNode != nil {
+		node.nextNode = linkedList.headNode
+	}
+	linkedList.headNode = &amp;node
+}
+
+func (linkedList *LinkedList) IterateList() {
+	var node *Node
+	for node = linkedList.headNode; node != nil; node = node.nextNode {
+		fmt.Println(node.property)
+	}
+}
+
+func (linkedList *LinkedList) NodeWithValue(property int) *Node {
+
+	var node *Node
+	var nodeWith *Node
+
+	for node = linkedList.headNode; node != nil; node = node.nextNode {
+		if node.property == property {
+			nodeWith = node
+			break
+		}
+	}
+
+	return nodeWith
+}
+
+func (linkedList *LinkedList) AddAfter(nodeProperty int, property int) {
+	var node = &amp;Node{}
+	node.property = property
+	node.nextNode = nil
+	var nodeWith *Node
+	nodeWith = linkedList.NodeWithValue(nodeProperty)
+	if nodeWith != nil {
+		node.nextNode = nodeWith.nextNode
+		nodeWith.nextNode = node
+	}
+
+}
+
+func main() {
+
+	//add to head method
+	linkedList := LinkedList{}
+	linkedList.AddToHead(1)
+	linkedList.AddToHead(2)
+	linkedList.AddToHead(3)
+	linkedList.AddToHead(4)
+	//fmt.Println(linkedList.headNode.property)
+
+	//iterate list method
+	//linkedList.IterateList();
+	//fmt.Println(linkedList.NodeWithValue(3));
+	// /linkedList.AddAfter(4, 5)
+	linkedList.IterateList()
+
+}
+</code></pre><h3 id="list">List</h3>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;fmt&#34;
+	&#34;container/list&#34;
+)
+
+func main() {
+
+//doubly linked list can be traversed in both directions	
+	
+	l := list.New()
+	e4 := l.PushBack(4)
+	e1 := l.PushFront(1)
+	l.InsertBefore(3, e4)
+	l.InsertAfter(2, e1)
+
+	// Iterate through list and print its contents.
+	for e := l.Front(); e != nil; e = e.Next() {
+		fmt.Println(e.Value)
+	}
+}
+</code></pre><h3 id="tuples">Tuples</h3>
+<pre tabindex="0"><code>package main
+
+import (
+	&#34;fmt&#34;
+)
+
+//Tuples - finite list of sorted items  
+
+
+func powerSeries(a int)(int,int){
+
+	return a*a, a*a*a
+}
+
+
+func main(){
+
+	var square int
+	var cube int 
+	
+	square, cube = powerSeries(3)
+	fmt.Print(&#34;square&#34;, square, &#34;cube&#34;, cube)  
+
+}
+</code></pre><p>Non Linear - Trees, tables, and containers.</p>
+<p>Honogenious - Two-dimensional and multidimensional.</p>
+<p>Hetrogenious - Linked Lists, ordered lists and unordered lists.</p>
+<p>Dynamic - dictionaries, tree sets, and sequences.</p>
+<h2 id="structural-design-patterns">Structural design patterns</h2>
+<p>Define relationships between entities, create system with different system blocks in a flexibile manner Adapter, bridge, composite, decorator, facade, flyweight, private class data, and proxy are the Gang of Four (GoF) structural design patterns.</p>
+<ul>
+<li>Adapter (DIP, Delegation) - principles adhered to
+The adapter uses the interface of a class to be a class with another compatible interface.
+The adapter translates the incompatible interface of the adaptee into an interface that the client wants.</li>
+</ul>
+<pre tabindex="0"><code>package main
+
+import(
+    &#34;fmt&#34;
+) 
+
+type IProcess interface {
+    process()
+}
+
+type Adapter struct {
+    adaptee Adaptee
+}    
+
+func (adapter Adapter) process() {
+    fmt.Println(&#34;adpater process&#34;)
+    adapter.adaptee.convert()
+}
+
+type Adaptee struct{
+    adapterType int 
+}
+
+func (adaptee Adaptee) convert(){
+    fmt.Println(&#34;Adaptee convert method&#34;)
+}
+
+func main(){
+    var processor IProcess = Adapter{}
+    processor.process();    
+}
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://example.org/posts/design_patterns/"
+      ><span class="mr-1.5">←</span><span>Creational Design Patterns</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://example.org/posts/database_design/"
+      ><span>Database Design</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://example.org/">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -53,7 +53,7 @@
   />
 
   
-  <title>Creational Design Patterns - Devblog</title>
+  <title>Design Principles - Devblog</title>
 
   
   <meta name="theme-color" />
@@ -61,9 +61,12 @@
   
   
   
-  <meta name="description" content="object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
-func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &#34;flight&#34;: return FlightReservationImpl{reservationDate,} case &#34;hotel&#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
-business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object" />
+  <meta name="description" content="Low Level Design
+Responsibility Assignment
+Dependancy Management
+Solid Single Responsibility Principle One class should have one and only one resposibility
+eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
+type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it" />
   <meta name="author" content="John Mason" />
   
 
@@ -138,29 +141,38 @@ business rules to validate some paramters caching ideompotency and thread safety
   
   
   
-  <meta property="og:title" content="Creational Design Patterns" />
-<meta property="og:description" content="object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
-func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &#34;flight&#34;: return FlightReservationImpl{reservationDate,} case &#34;hotel&#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
-business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object" />
+  <meta property="og:title" content="Design Principles" />
+<meta property="og:description" content="Low Level Design
+Responsibility Assignment
+Dependancy Management
+Solid Single Responsibility Principle One class should have one and only one resposibility
+eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
+type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://example.org/posts/design_patterns/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="http://example.org/posts/design_principles/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
 <meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
 
   
-  <meta itemprop="name" content="Creational Design Patterns">
-<meta itemprop="description" content="object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
-func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &#34;flight&#34;: return FlightReservationImpl{reservationDate,} case &#34;hotel&#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
-business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
+  <meta itemprop="name" content="Design Principles">
+<meta itemprop="description" content="Low Level Design
+Responsibility Assignment
+Dependancy Management
+Solid Single Responsibility Principle One class should have one and only one resposibility
+eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
+type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
 <meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="wordCount" content="281">
+<meta itemprop="wordCount" content="308">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Creational Design Patterns"/>
-<meta name="twitter:description" content="object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
-func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &#34;flight&#34;: return FlightReservationImpl{reservationDate,} case &#34;hotel&#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
-business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object"/>
+<meta name="twitter:title" content="Design Principles"/>
+<meta name="twitter:description" content="Low Level Design
+Responsibility Assignment
+Dependancy Management
+Solid Single Responsibility Principle One class should have one and only one resposibility
+eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
+type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it"/>
 
   
   
@@ -275,7 +287,7 @@ business rules to validate some paramters caching ideompotency and thread safety
 
 <article>
   <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">Creational Design Patterns</h1>
+    <h1 class="!my-0 pb-2.5">Design Principles</h1>
 
     
     <div class="text-sm antialiased opacity-60">
@@ -289,57 +301,67 @@ business rules to validate some paramters caching ideompotency and thread safety
     
   </header>
 
-  <section><ul>
-<li>object creation mechanisms</li>
-<li>code using the object does not need to know about how the object is created.</li>
-</ul>
-<h2 id="factory-method">Factory Method</h2>
-<p>object used to created other onjects</p>
-<pre tabindex="0"><code>func NewReservation(vertical, reservationDate string) Reservation {
-    switch(vertical) {
-        case &#34;flight&#34;:
-            return FlightReservationImpl{reservationDate,}
-        case &#34;hotel&#34;:
-            return HotelReservationImpl{reservationDate,}
-        default:
-            return nil
-    }   
+  <section><p>Low Level Design</p>
+<p>Responsibility Assignment</p>
+<p>Dependancy Management</p>
+<h1 id="solid">Solid</h1>
+<h2 id="single-responsibility-principle">Single Responsibility Principle</h2>
+<p>One class should have one and only one resposibility</p>
+<p>eg build a hierarchy of base and derived classes
+eg reservation interface
+client code does not care about the type of reservation extraneous coupling is not introduced</p>
+<pre tabindex="0"><code>type Reservation interface {
+    GetReservationDate() string
+    CalculateCancellationFee() float64  ***** 
+    Cancel()
+    GetCustomerDetails() []Customer
+    GetSellerDetails() Seller
 }
-</code></pre><h2 id="builder">Builder</h2>
-<p>not striaght forward</p>
-<ul>
-<li>business rules to validate some paramters</li>
-<li>caching</li>
-<li>ideompotency and thread safety</li>
-<li>multiple constructors arguments</li>
-</ul>
-<p>create different flavours of an object</p>
-<h2 id="abstract-factory">Abstract Factory</h2>
-<p>Objects that need to be created together
-two entities eg flight invoice to a hotel resrvation
-factories of factories construct.</p>
-<h2 id="singleton">Singleton</h2>
-<p>Restricts creation of objects to a single one.
-eg single coordinator object across multiple pieces of code.
-intoduces global state so considered an antipattern</p>
-<h1 id="structural-design-patterns">Structural Design Patterns</h1>
-<p>Delineate relationships between objects and simplifiy design
-receipes for various situations</p>
-<h2 id="adaptor">Adaptor</h2>
-<p>you have a new requirement and the components almosts meets that requirement.
-Adapter class proxies what is required and delgates the work to the incompatible class.</p>
-<pre tabindex="0"><code>Object Adaptor: Here, the adaptor class has an instance of the Adaptee class and the adaptor method delegates the work to the wrapped instance.
-Class Adaptor: Here, the adaptor is a mix-in (a class with multiple inheritance) and inherits from both places:
-The interface that is expected
-The Adaptee interface
-</code></pre><h2 id="bridge">Bridge</h2>
-<p>is a relationships between intefaces get mixed up with the implementations details
-the abstraction and the implmentation cannot be extended</p>
-<p>decouple the abstarction form the implmentation so both can vary independently
-Segregating the the interface heirarchy and implementation hierrachy into two differnet trees.</p>
-<p>The abstraction here is a struct not an interface, since in Go you can&rsquo;t have abstract structs/interfaces where you can store a reference to the seller implementation.</p>
-<h2 id="composite">Composite</h2>
-</section>
+</code></pre><h2 id="openclosed-principle">Open/Closed Principle</h2>
+<p>You should be able to extend a classes behavior without modifying it</p>
+<p>It should be possible to extend or override class behavior without having to modify code.</p>
+<p>model trips with a repository of reservations
+calculateCancellationFee
+for each type of reservation.</p>
+<pre tabindex="0"><code>type Trip struct {
+    reservations []Reservation
+}
+
+func (t *Trip) CalculateCancellationFee() float64 { //implements reservation interface
+    total:= 0.0
+
+    for _, r:= range(t.reservations) {
+        total += r.CalculateCancellationFee()
+    }
+
+    return total
+}
+
+func (t *Trip) AddReservation (r Reservation) {
+    t.reservations = append(t.reservations, r)
+}
+</code></pre><h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
+<p>Derived types must be substitutable for their base types.</p>
+<p>derived classes must be usablethrough the base class interface without
+the need for the client to know the specific derived class.
+s
+The interface should be able to suffice for all structs that implement that interface.</p>
+<pre tabindex="0"><code>The client who wants to compute the cancellation fee for a trip does not care about the specific type of reservations in the trip.
+ The trip&#39;s code does not know how each reservation computes the cancellation fee.
+</code></pre><h2 id="integration-segregation-principle">Integration Segregation Principle</h2>
+<p>Many client specific interfaces are better than one general purpose interface
+avoid derived classes implementing unrelated methods.</p>
+<p>base reservation interface then have specific types of reservations with
+specialised methods.</p>
+<h2 id="dependancy-inversion-principle">Dependancy Inversion Principle</h2>
+<p>Depend on abstractions and not concretions</p>
+<pre tabindex="0"><code>Every package should have interfaces that advertise functionality without the
+implementation specifics.
+
+when a package needs a dependancy it should take it as a parameters
+
+Higher level modules should depend on intefaces and not concrete implementations.
+</code></pre></section>
 
   
   
@@ -351,15 +373,15 @@ Segregating the the interface heirarchy and implementation hierrachy into two di
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://example.org/posts/recent_projects/"
-      ><span class="mr-1.5">←</span><span>Recent Projects</span></a
+      href="http://example.org/posts/database_design/"
+      ><span class="mr-1.5">←</span><span>Database Design</span></a
     >
     
     
     <a
       class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="http://example.org/posts/datastructures_algos/"
-      ><span>Data Structures and Algorithms</span><span class="ml-1.5">→</span></a
+      href="http://example.org/posts/full_stack_web_dev_go/"
+      ><span>Full Stack Web Development Go</span><span class="ml-1.5">→</span></a
     >
     
   </nav>

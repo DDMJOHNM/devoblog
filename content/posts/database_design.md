@@ -102,13 +102,79 @@ Based on your understanding so far, what are the entities, attributes, identifie
 
 Entity Relationship Diagram and Notation 
 
+(Above from Coursera course)
 
+https://www.mongodb.com/compare/relational-vs-non-relational-databases
+## Relational versus NoSql
 
+# Rdms 
+-Relationships between table (Relational Database)
 
+## Advantages 
+### Acid Compliant
+-Atomicity (All or nothing Update) , Consistency and Durability - standard that guarantees the reliability of Database transactions.
 
+### Data Accurracy
+primary and foreign keys ensure no duplication
 
+### Nomalization
+Ensuring data is organized in such a way that data anomalies are reduced or eliminated also reduces storage cost
 
+### Simplicity
+English like syntax of sql 
+
+## Disadvantages
+
+### Scalability
+- Vertical Scaling improve hardware in the machine.
+### Flexibility
+- Schema is rigid for relational DB
+
+### Performance 
+- tightly linked to the complexity of tables and number
+as well amount of data in each table.
+
+## Non Relational Database or noSQL 
+- Any db that doesnt use tables great for the cloud horizontal scaling involved (Distributed across servers)
+
+### Document Databases
+Documents individual units 
+Json like structures that support datatypes.
+db.product.find({"_id": 23}, {productName: 1, price: 1})
+filter collections of data 
+eg mongo DB
+
+### Key Value Database 
+Data accessed from keys simplicity
+
+### Graph Databases 
+Most specialised for of non relational db 
+they are flexible because new nodes and edges can easily be added.
+not good at querying the whole as relation arent well defined.     
+
+## Wide Columns Databases 
+Considered two dimensional key value stores. 
+
+# When to use a relational Database
+
+- Project where data is predictable, structure, size and frequency.
+- Nomalization can help reduce the size of data on the disk and limiting duplicate data.
+- Are the best choice if relationships between enitites are important
+- large dataset with a complex structure.
+
+# When to use a non-relational database
+- it your data needs to be flexible given size and shape and be open in the future
+- Cloud and scaling 
+
+``` 
+Non-relational databases are suitable for both operational and transactional data.
+They are more suitable for unstructured big data.
+Non-relational databases offer higher performance and availability.
+Flexible schema help non-relational databases store more data of varied types that can be changed without major schema changes.
+```
 
 ## Relational Models
 ## Normalization 
+- WATCH VIDEO *** 
+
 ## Case Study 

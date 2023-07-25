@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Hands On Arcitecture - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
+Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?" />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://example.org/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="http://example.org/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="http://example.org/github.svg" />
+  
+  <link rel="preload" as="image" href="http://example.org/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="http://example.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.115.4">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Hands On Arcitecture" />
+<meta property="og:description" content="Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
+Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/hands_on_architecture/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-04-06T16:56:59+13:00" />
+<meta property="article:modified_time" content="2023-04-06T16:56:59+13:00" />
+
+  
+  <meta itemprop="name" content="Hands On Arcitecture">
+<meta itemprop="description" content="Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
+Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?"><meta itemprop="datePublished" content="2023-04-06T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2023-04-06T16:56:59+13:00" />
+<meta itemprop="wordCount" content="869">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hands On Arcitecture"/>
+<meta name="twitter:description" content="Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
+Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://example.org/"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/YOUR_GITHUB_ID"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/YOUR_LINKEDIN_ID"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Hands On Arcitecture</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 6, 2023</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h1 id="hands-on-architecture">Hands on Architecture</h1>
+<h2 id="role-of-the-architect">Role Of the Architect</h2>
+<ul>
+<li>Define a blueprint</li>
+</ul>
+<h2 id="requirements-clarification">Requirements Clarification</h2>
+<ul>
+<li>Top level functional and non functional requirements (system qualities)</li>
+</ul>
+<h2 id="true-north">True North</h2>
+<ul>
+<li>Engineering Principles for the system</li>
+<li>High level design (Decomposition of system into components)</li>
+<li>Quality Attributes</li>
+<li>Product Velocity (cicd)</li>
+<li>a/b testing - every feature has a flag</li>
+</ul>
+<h2 id="technology-selection">Technology Selection</h2>
+<h2 id="leadership">Leadership</h2>
+<p>(Steering and asking tough questions at design meetings)</p>
+<h2 id="coaching-and-mentoring-developers">Coaching and Mentoring Developers</h2>
+<ul>
+<li>Outside of their normal deliverables</li>
+</ul>
+<h2 id="target-state-vs-current-state">Target State vs Current State</h2>
+<ul>
+<li>mvp</li>
+<li>next bite sized chunks after that</li>
+</ul>
+<h2 id="software">Software</h2>
+<h2 id="architecture-vs-design">Architecture vs Design</h2>
+<ul>
+<li>High Level Structure</li>
+<li>Low Level Implementatiion Details</li>
+</ul>
+<h2 id="what-does-architecture-look-like">What does Architecture look like?</h2>
+<ul>
+<li>High Cohesion (Component Performs Single Task)</li>
+<li>Low Coupling (low dependancy between themselves)
+(Component can be extended or completely replaceable)</li>
+</ul>
+<h3 id="see-robert-martin-concentric-circles">See Robert Martin Concentric Circles</h3>
+<ul>
+<li>Enterprise Business Rules</li>
+<li>Application Business Rules</li>
+<li>Inteface Adapters</li>
+<li>Frameworks and Drivers</li>
+</ul>
+<p>Different Architectures will bring out different numbers and sets of circles.</p>
+<h2 id="main-architectural-paradigms-that-are-commonly-used">Main Architectural Paradigms that are commonly used.</h2>
+<ul>
+<li>Package Based</li>
+<li>Layering/N-tier/3-tier</li>
+<li>Async / message-bus / actor model / Communicating Sequential Processes(CSP)</li>
+<li>Object Oriented</li>
+<li>MVC/Separated Presentation</li>
+<li>Microservices/Service Oriented Architecture (SOA)</li>
+</ul>
+<h2 id="microservices">Microservices</h2>
+<p>A simple standalone application</p>
+<p>Three distinct layers:</p>
+<ul>
+<li>Front end</li>
+<li>Back End</li>
+<li>Data Store</li>
+</ul>
+<p>As product features start to multiply</p>
+<ul>
+<li>Code complexity increases</li>
+<li>Operational work increases (Dev Ops)</li>
+<li>Product Hits Scalability Limits</li>
+<li>Developers write huge amount of tests as quality gates</li>
+</ul>
+<p>Applications in this state are called &lsquo;Monoliths&rsquo;</p>
+<p>Each microservice is autonomous, self contained and individually deployable and scalable.</p>
+<p>Each Feature can be a microservice.</p>
+<h2 id="challenges-for-microservices">Challenges for Microservices</h2>
+<ul>
+<li>Efficientcy.</li>
+<li>Programming complexity. (Compartmentalisation key to managing)</li>
+<li>Synchronisation Primatives - mutexes and Semaphores (Deadlocks)</li>
+<li>Priority Inversion - High priority process wait on Low Priority Process</li>
+<li>Starvation</li>
+</ul>
+<h2 id="golang-to-solve-these-challenges">Golang to solve these challenges</h2>
+<ul>
+<li>
+<p>Code becomes hard to read and poorly documented.</p>
+</li>
+<li>
+<p>Contracts between components cannot be easily inferred.</p>
+</li>
+<li>
+<p>Builds are slow. The development cycles of code-compile-test grow in difficulty,with inefficiency in modeling concurrent systems, as writing efficient code with synchronization primitives is tough.</p>
+</li>
+<li>
+<p>Manual memory management often leads to bugs.</p>
+</li>
+<li>
+<p>There are uncontrolled dependencies.</p>
+</li>
+<li>
+<p>There is a variety of programming styles due to multiple ways of doing
+something, leading to difficulty in code reviews, among other things.</p>
+</li>
+</ul>
+<h2 id="concurrency">Concurrency</h2>
+<p>With shared memory its easy to get deadlocks or corruption if a process crashes or misbehaves.</p>
+<p>CSP promotes messaging using channels queues with a logical inteface of send() and recv()</p>
+<p>First class channels. (First Class Go Primatives)
+Proceedures called go routines.</p>
+<h2 id="garbage-collection">Garbage Collection</h2>
+<p>In a concurrent system garbage collection is a must have feature</p>
+<h2 id="object-orientation">Object Orientation</h2>
+<p>Go way is composition over inheritance
+For Polymorphic Behavior Go uses interfaces and duck typing.</p>
+<h2 id="pacakging-code">Pacakging Code</h2>
+<p>encapsulation—packaging code into a higher level of abstractions</p>
+<ul>
+<li>Object orientation in go</li>
+<li>Code layout of packages, dependencies</li>
+</ul>
+<h3 id="contracts-key-aspect-of-module-design">Contracts key aspect of module design</h3>
+<p>Formalized Documentation documenetation of an interaction with a software component.
+(Durable, Versioned, Service Level Agreements)</p>
+<h2 id="object-orientation-in-go">Object Orientation in Go</h2>
+<ul>
+<li>
+<p>Class is a blueprint or template for objects</p>
+</li>
+<li>
+<p>Functions invoke behavior</p>
+</li>
+<li>
+<p>Encapsulation - implies exposing a contract (inteface) for the behavior of objects and hides implementation details. (Private attributes and methods)</p>
+</li>
+<li>
+<p>Inheritance (is-a relationship) can lead to a hieraechy of classes that can be hard to debug.</p>
+</li>
+</ul>
+<pre tabindex="0"><code>This ability of an interface method to behave differently based on the actual object is called polymorphism (derived classes &lt;- Super class)
+
+An alternative to inheritance is to delegate behavior, also called composition has-a relationship
+
+Classes implement an interface—which is the contract the base class offers.
+Functionality reuse happens through having references to objects, rather than
+deriving from classes.
+
+Golang favours composition over inheritance.
+</code></pre><hr>
+<ul>
+<li>THe Struct - equivelent container for encapsulation.
+Methods hava a receiver clause (Method Set)</li>
+<li>pointer receiver - pass by refernce</li>
+</ul>
+<ul>
+<li>non - pointer receiver pass by reference</li>
+<li>slices and maps act as a reference pass them as a value will allow mutation of the objects.</li>
+</ul>
+<ul>
+<li>
+<p>Visibility - struct field with a lowercase letter is private.
+(Public struct field code outside package can reference.)</p>
+</li>
+<li>
+<p>The Interface - Interface construct key to polymorhism in go
+Objects that implement all the interface methods
+automatically implement the interface.</p>
+</li>
+<li>
+<p>Embedding - is a mechanism to allow the ability to borrow pieces from different classes.
+Let&rsquo;s call Base , struct embedded into a Derived struct.</p>
+</li>
+</ul>
+<hr>
+<p>This may feel like inheritance, but embedding does not provide polymorphism. Embedding
+differs from subclassing in an important way: when a type is embedded, the methods of
+that type are available as methods of the outer type; however, for invocation of the
+embedded struct methods, the receiver of the method must be the inner (embedded)
+type, not the outer one
+(Can also be done on interfaces)
+multiple inheritences -deadly diamond of death</p>
+<h2 id="code-layout">Code Layout</h2>
+<p>bin
+pkg
+<!-- raw HTML omitted -->
+vendor
+Makefile
+scripts
+Main driver - main files that drive components and control the life cycle of top level objects
+tests
+src
+github.com</p>
+<p>use makefile to stage vendor code before checking into parent repository
+takes a snap shot of the dependancies and cehcks them into a vendor folder</p>
+<h2 id="framework-refactor-code-into-a-framework-package">framework refactor code into a framework package</h2>
+<p>auth, logger, config helper classes</p>
+<h2 id="testing">Testing</h2>
+<p>code business logic is iolated from depenadncies such as external services.
+go mock
+test packages independently
+structuring tests
+-table driven test (DRY)
+-sub tests can be run in parallel</p>
+<p>good packaging is necessary because it its eanables code changes to happen
+faster with less risk, also leads to fewer bugs in production</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="http://example.org/posts/python/"
+      ><span>Python AI Development</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2023
+    <a class="link" href="http://example.org/">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
