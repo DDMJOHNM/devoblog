@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devblog</title>
+    <link>http://example.org/</link>
+    <description>Recent content on Devblog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Nov 2022 16:56:59 +1300</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creational Design Patterns</title>
+      <link>http://example.org/posts/design_patterns/</link>
+      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
+      
+      <guid>http://example.org/posts/design_patterns/</guid>
+      <description>Creational Design Patterns object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
+func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &amp;#34;flight&amp;#34;: return FlightReservationImpl{reservationDate,} case &amp;#34;hotel&amp;#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
+business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object</description>
+    </item>
+    
+  </channel>
+</rss>
