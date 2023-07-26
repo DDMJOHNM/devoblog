@@ -174,7 +174,43 @@ Flexible schema help non-relational databases store more data of varied types th
 ```
 
 ## Relational Models
-## Normalization 
-- WATCH VIDEO *** 
+# Normalization 
+## NORMAL FORMS
+organise data efficiently in db
+guidelines 
 
-## Case Study 
+- avoid data redundancy
+- data logically stored
+
+### 1nf
+table db or schema
+1 - only atomic values
+2 - No repeating groups
+3 - each table must have a unique primary key
+
+### 2nf
+1 - in the first normal form
+2 - no partial dependancies 
+composite keys
+
+
+### 3nf
+1 - 2nf
+2 - all non pk fields  are dependant on the pk
+
+## Denormalization
+used on previously normalised databases to increase perfomance 
+adding redundant copies of data or by grouping data 
+often motivated by scalability or performance in relational databses 
+needinf to carry out very large numbers of read operations.
+only decognised on a data model otherwised normalised.
+
+eg join operatons on a normalised design may be prohibitively slow
+- sql indexed views
+- optimise query response 
+
+denormalise logical data design 
+so it doesnt become inconsistant
+using constarints 
+
+ 
