@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://devblog-2u3g.onrender.com'
 languageCode = 'en-us'
 title = 'Devblog'
 theme = 'paper'
@@ -8,7 +8,7 @@ theme = 'paper'
   color = 'linen'                           # linen, wheat, gray, light
 
   # header social icons
-  github = 'YOUR_GITHUB_ID'                 # github.com/YOUR_GITHUB_ID
+  github = 'DDMJOHNM'                 # github.com/YOUR_GITHUB_ID
   linkedin = 'YOUR_LINKEDIN_ID'             # linkedin.com/in/YOUR_LINKEDIN_ID
 
   # home page profile

@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Devblog</title>
-    <link>http://example.org/</link>
+    <link>https://devblog-2u3g.onrender.com/</link>
     <description>Recent content on Devblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 06 Apr 2023 16:56:59 +1300</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Apr 2023 16:56:59 +1300</lastBuildDate><atom:link href="https://devblog-2u3g.onrender.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hands On Arcitecture</title>
-      <link>http://example.org/posts/hands_on_architecture/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/hands_on_architecture/</link>
       <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/hands_on_architecture/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/hands_on_architecture/</guid>
       <description>Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
 Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?</description>
     </item>
     
     <item>
       <title>Python AI Development</title>
-      <link>http://example.org/posts/python/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/python/</link>
       <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/python/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/python/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Recent Projects</title>
-      <link>http://example.org/posts/recent_projects/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/recent_projects/</link>
       <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/recent_projects/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/recent_projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Creational Design Patterns</title>
-      <link>http://example.org/posts/design_patterns/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/design_patterns/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/design_patterns/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/design_patterns/</guid>
       <description>object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
 func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &amp;#34;flight&amp;#34;: return FlightReservationImpl{reservationDate,} case &amp;#34;hotel&amp;#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
 business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object</description>
@@ -48,10 +48,10 @@ business rules to validate some paramters caching ideompotency and thread safety
     
     <item>
       <title>Data Structures and Algorithms</title>
-      <link>http://example.org/posts/datastructures_algos/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/datastructures_algos/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</guid>
       <description>Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
 Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
 Doubly Linked List package main import ( &amp;#34;fmt&amp;#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &amp;#34;container/heap&amp;#34; &amp;#34;fmt&amp;#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www.</description>
@@ -59,10 +59,10 @@ Doubly Linked List package main import ( &amp;#34;fmt&amp;#34; ) //connected to 
     
     <item>
       <title>Database Design</title>
-      <link>http://example.org/posts/database_design/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/database_design/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/database_design/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/database_design/</guid>
       <description>Entity Relationship Models DBMS
 data information knowledge intelligence (value of data) From data to actionable insights
 File System Solution
@@ -74,10 +74,10 @@ more information from same amount of data share our data balancing conflicting r
     
     <item>
       <title>Design Principles</title>
-      <link>http://example.org/posts/design_principles/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/design_principles/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/design_principles/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/design_principles/</guid>
       <description>Low Level Design
 Responsibility Assignment
 Dependancy Management
@@ -88,10 +88,10 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
     
     <item>
       <title>Full Stack Web Development Go</title>
-      <link>http://example.org/posts/full_stack_web_dev_go/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/full_stack_web_dev_go/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/full_stack_web_dev_go/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/full_stack_web_dev_go/</guid>
       <description>1- Creating a backend
 docker
 postgres
@@ -101,19 +101,19 @@ makefile</description>
     
     <item>
       <title>Grind 75</title>
-      <link>http://example.org/posts/grind75/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/grind75/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/grind75/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/grind75/</guid>
       <description>Two Sum func twoSum(nums []int, target int) []int { indices := [][]int{} for i := 0; i &amp;lt; len(nums); i++ { for j := i; j &amp;lt; len(nums); j++ { if nums[i]+nums[j] == target { if i != j { indices = append(indices, []int{i, j}) } } } } fmt.Println(indices) return indices[0] } Two Parenthesis package main import ( &amp;#34;container/heap&amp;#34; &amp;#34;fmt&amp;#34; ) type StringHeap []string func (sheap StringHeap) Len() int { return len(sheap) } func (sheap StringHeap) Less(i, j int) bool { return sheap[i] &amp;gt; sheap[j] } func (sheap StringHeap) Swap(i, j int) { sheap[i], sheap[j] = sheap[j], sheap[i] } func (sheap *StringHeap) Push(heapstrf interface{}) { *sheap = append(*sheap, heapstrf.</description>
     </item>
     
     <item>
       <title>ADRs</title>
-      <link>http://example.org/posts/adrs/</link>
+      <link>https://devblog-2u3g.onrender.com/posts/adrs/</link>
       <pubDate>Tue, 18 Oct 2022 16:56:59 +1300</pubDate>
       
-      <guid>http://example.org/posts/adrs/</guid>
+      <guid>https://devblog-2u3g.onrender.com/posts/adrs/</guid>
       <description>https://adr.github.io/ https://github.com/adr
 adrs decision log A “lightweight” ADR consists of title, status, context, decision, and consequences (according to @mtnygard).
 Decision record template by Michael Nygard This is the template in Documenting architecture decisions - Michael Nygard. You can use adr-tools for managing the ADR files.
