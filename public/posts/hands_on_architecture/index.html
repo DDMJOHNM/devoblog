@@ -150,7 +150,7 @@ Coaching and Mentoring Developers Outside of their normal deliverables Target St
 <meta itemprop="description" content="Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
 Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?"><meta itemprop="datePublished" content="2023-04-06T16:56:59+13:00" />
 <meta itemprop="dateModified" content="2023-04-06T16:56:59+13:00" />
-<meta itemprop="wordCount" content="869">
+<meta itemprop="wordCount" content="1732">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -491,6 +491,106 @@ structuring tests
 -sub tests can be run in parallel</p>
 <p>good packaging is necessary because it its eanables code changes to happen
 faster with less risk, also leads to fewer bugs in production</p>
+<h1 id="scaling-algorithms">Scaling Algorithms</h1>
+<ul>
+<li>Different Algorithms have different characteristics in terms of time and space complexity</li>
+<li>Time complexity defines the amount of time taken by an algorithm to run as a function of the inout size.</li>
+<li>Space complexity gives the amount of space taken for an alogrithm to run for a specific length of the input.</li>
+</ul>
+<pre tabindex="0"><code>
+## Bubble sort
+
+func bubbleSort(array []int) {
+  swapped:= true;
+
+  for swapped {
+    swapped = false
+    for i:= 0; i &lt; len(array) - 1; i++ {
+      if array[i + 1] &lt; array[i] {
+        array[i + 1], array[i ] = array[i], array[i + 1]
+        swapped = true
+      }
+    }
+  }
+}
+</code></pre><p>we will need n * n comparisons; that is, n2 operations.
+Assuming each operation takes a unit time,
+this algorithm is thus said to have a worst case complexity of O(n2), or quadratic complexity.</p>
+<h3 id="quicksort">Quicksort</h3>
+<p>is another example of solving the problem. It is a type of the divide-and-conquer strategy of algorithm design, and is based on the idea of choosing one element of the array as a pivot and partitioning the array around this so that the elements to the left of the pivot are less than the value, while those on the right are larger than the pivot. A Go implementation is shown here:</p>
+<pre tabindex="0"><code>func quickSort(array []int) []int {
+  if len(array) &lt;= 1 {
+    return array
+  }
+  left, right:= 0, len(array) - 1
+
+  // Pick a pivot randomly and move it to the end
+  pivot:= rand.Int() % len(array)
+  a[pivot], a[right] = a[right], a[pivot]
+
+  // Partition
+  for i:= range array {
+    if array[i] &lt; array[right] {
+      array[i], array[left] = array[left], array[i]
+      left++
+    }
+  }
+
+  // Put the pivot in place
+  array[left], array[right] = array[right], array[left]
+
+  // Recurse
+  quickSort(array[:left])
+  quickSort(array[left + 1:])
+
+  return array
+}
+</code></pre><p>nlogn. Thus, for quicksort, the time complexity is O(nlogn).
+There is a linear scan of the data.
+The input is divided into two parts and the code recourses on it.</p>
+<h1 id="distrubuted-algorithms">Distrubuted Algorithms</h1>
+<p>even when most efficient alogrithms cannot provide the answer in a reasonable time.
+sometime dataset is so large it cant fit into the memory or disk of a single machine.
+spolit tasks across machines involves alot of tricky low level details.</p>
+<ul>
+<li>Automatic Parallelization</li>
+<li>Communication and Coordination</li>
+<li>Distribution</li>
+<li>Optimization for network and disk access</li>
+<li>Googles map reduce library</li>
+</ul>
+<h1 id="scaling-data-structures">Scaling data structures</h1>
+<ul>
+<li>The way in which we store the data for an alogrithm has a huge impact of the scalability of the particular algorithm.</li>
+<li>Various datastructures provide different complexities for different operations.</li>
+</ul>
+<h1 id="profiling-data-structures">Profiling Data Structures</h1>
+<p>The alogrithm scalability choices often manifest themselves in the choice of datastructures.
+This table gives the time and space complexity of common data structures and their operations.</p>
+<p>Array
+LinkedList
+Skip List
+Hash Table
+Binary Search Tree
+Red black Tree</p>
+<p>To summarize, based on what operation you want to do, how often, with a data structure, you can choose the right one for a job.</p>
+<ul>
+<li>consider how space allocation plays out with an increase in data.</li>
+</ul>
+<p>Another aspect to consider in data structure is how space allocation plays out with an increase in data. For example, arrays are fixed length, and thus the data structure scalability is limited to the size at the time of allocation. In contrast, linked lists need no upfront total capacity allocation, but they do not offer the O(1) access time characteristics of arrays. That said, there are some hybrid data structures such as array lists that offer the best of both worlds.</p>
+<p>Also, for a large amount of data, it is useful to think about how efficiently we can store the information. For example, if we have to store a Boolean flag for all users on a website, then there are two options:</p>
+<p>Boolean array: one byte per flag/user
+Bitset: a bit for each user/flag</p>
+<p>The first option is slightly easier to code, but 50 M users will need 47 MB for the first option verses about 6 MB for the second. If there are multiple such flags for different use cases, you can imagine that bit sets will allow us to store more data in RAM, leading to better performance.</p>
+<h1 id="probabilistic-data-structures">Probabilistic data structures</h1>
+<p>sometimes scability problem is the sheer number of elements that the data structure has to handle.
+top k frequent elements in a set where the number of values is very large</p>
+<p>Simple Solution: hash table to count frequencies and an min heap of elements ordered by the frequencies of elements</p>
+<p>Alternative solution: count min sketch consists of a two dimensional matrix<br>
+Each element is mapped to one position at each of the d rows using d different/independent hash functions.</p>
+<p>Whenever a new value is inserted, the corresponding counters are incremented and the total taken. We can then use this as an good estimate for frequency in the min-heap. If the frequency count is greater than the frequency of the element at the heap top, then the top of the heap is popped and the new element is inserted.</p>
+<p>Reservoir sampling is an algorithm/data structure that enables these types of queries. First, we create a reservoir (array) of a size equal to the sample size required. In our case, say, 10. The first 10 elements are ingested as-in in the set.</p>
+<h1 id="scaling-data">Scaling Data</h1>
 </section>
 
   

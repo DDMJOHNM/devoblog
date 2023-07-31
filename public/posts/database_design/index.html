@@ -165,7 +165,7 @@ A structure that contains data Organise data through entities, attributes, relat
 Microsoft Access MySql Progres MongoDb (NoSql) Advantages
 more information from same amount of data share our data balancing conflicting requirements controlling redundacy consistency Referential integrity expanding security increasing productivity providing data independence."><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
 <meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="wordCount" content="691">
+<meta itemprop="wordCount" content="828">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
@@ -473,11 +473,40 @@ They are more suitable for unstructured big data.
 Non-relational databases offer higher performance and availability.
 Flexible schema help non-relational databases store more data of varied types that can be changed without major schema changes.
 </code></pre><h2 id="relational-models">Relational Models</h2>
-<h2 id="normalization">Normalization</h2>
+<h1 id="normalization">Normalization</h1>
+<h2 id="normal-forms">NORMAL FORMS</h2>
+<p>organise data efficiently in db
+guidelines</p>
 <ul>
-<li>WATCH VIDEO ***</li>
+<li>avoid data redundancy</li>
+<li>data logically stored</li>
 </ul>
-<h2 id="case-study">Case Study</h2>
+<h3 id="1nf">1nf</h3>
+<p>table db or schema
+1 - only atomic values
+2 - No repeating groups
+3 - each table must have a unique primary key</p>
+<h3 id="2nf">2nf</h3>
+<p>1 - in the first normal form
+2 - no partial dependancies
+composite keys</p>
+<h3 id="3nf">3nf</h3>
+<p>1 - 2nf
+2 - all non pk fields  are dependant on the pk</p>
+<h2 id="denormalization">Denormalization</h2>
+<p>used on previously normalised databases to increase perfomance
+adding redundant copies of data or by grouping data
+often motivated by scalability or performance in relational databses
+needinf to carry out very large numbers of read operations.
+only decognised on a data model otherwised normalised.</p>
+<p>eg join operatons on a normalised design may be prohibitively slow</p>
+<ul>
+<li>sql indexed views</li>
+<li>optimise query response</li>
+</ul>
+<p>denormalise logical data design
+so it doesnt become inconsistant
+using constarints</p>
 </section>
 
   
