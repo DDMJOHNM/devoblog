@@ -301,3 +301,77 @@ func main(){
 }
 ```
 
+## Chapter One
+Classification of data structures and structural design patterns
+Representation of algorithms
+Complexity and performance analysis
+Brute force algorithms
+Divide and conquer algorithms
+Backtracking algorithms
+
+
+- Reduce storage space and differculty while performing specific tasks
+- Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services
+
+### Abstract Data types
+Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types
+
+Abstract datatypes
+Container 
+List 
+Set
+Map 
+Graph 
+Stack 
+Queue
+
+1. basic alogorithms using the the right data structure and structural design patterns
+2. performance analysis
+
+Time and space analysis for different algorithms helps compare them and use the optimal one 
+
+## Classification of Data Structure 
+Orgnization of Data into a Computer MemoryScheme for Data to decouple fucntional defination of Data from its implementation.
+
+### Linear
+Lists, Sets, Tuples, Queues, Stacks, heaps
+
+### Non-Linear 
+Trees, Tables, Containers
+
+### Honegenous
+2D Arrays, Multi Dimensional Arrays 
+
+### Hetrogeneous
+Linked Lists, Ordered Lists, Unordered Lists
+
+### Dynamic 
+Dictionaries, TreeSets, Sequences
+
+
+## Lists 
+A sequence of elements, connected with each other forward or backward direction, element can have payload properties 
+
+## Tuples
+A is a finite sorted list of elements
+groups data immutable sequential collections 
+element has a related field of different datatypes
+
+# Heaps
+A heap is a data structure based on the heap property 
+used in selection, graph and k way merge alogrithms
+finding, merging, insertion and key changes and deleting are performed on heaps
+according to the heap order (maximum heap property) value is stored at each node is greater than or equal to it's children.
+
+Order is descending then referred to as a maximum heap otherwise minimum heap
+partially ordered datastructure 
+
+
+
+
+
+
+
+
+
+

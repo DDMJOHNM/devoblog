@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Code Complete - Steve McConnell - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Chapter One Welcome to Software Construction ■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project. ■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing). ■ Other common terms for construction are “coding” and “programming.” ■ The quality of the construction substantially affects the quality of the software." />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://devblog-2u3g.onrender.com/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/github.svg" />
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://devblog-2u3g.onrender.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.115.4">
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Code Complete - Steve McConnell" />
+<meta property="og:description" content="Chapter One Welcome to Software Construction ■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project. ■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing). ■ Other common terms for construction are “coding” and “programming.” ■ The quality of the construction substantially affects the quality of the software." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/code_complete/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-01T16:56:59+13:00" />
+<meta property="article:modified_time" content="2024-01-01T16:56:59+13:00" />
+
+  
+  <meta itemprop="name" content="Code Complete - Steve McConnell">
+<meta itemprop="description" content="Chapter One Welcome to Software Construction ■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project. ■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing). ■ Other common terms for construction are “coding” and “programming.” ■ The quality of the construction substantially affects the quality of the software."><meta itemprop="datePublished" content="2024-01-01T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2024-01-01T16:56:59+13:00" />
+<meta itemprop="wordCount" content="754">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Code Complete - Steve McConnell"/>
+<meta name="twitter:description" content="Chapter One Welcome to Software Construction ■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project. ■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing). ■ Other common terms for construction are “coding” and “programming.” ■ The quality of the construction substantially affects the quality of the software."/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://devblog-2u3g.onrender.com"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/DDMJOHNM"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/john-mason-08698bb1"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Code Complete - Steve McConnell</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Jan 1, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="chapter-one">Chapter One</h2>
+<h3 id="welcome-to-software-construction">Welcome to Software Construction</h3>
+<p>■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project.
+■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing).
+■ Other common terms for construction are “coding” and “programming.”
+■ The quality of the construction substantially affects the quality of the software.
+■ In the final analysis, your understanding of how to do construction determines how good a programmer you are, and that’s the subject of the rest of the book.</p>
+<h2 id="chapter-two">Chapter Two</h2>
+<h3 id="metaphors-for-a-richer-understanding-of-software-development">Metaphors for a Richer Understanding of Software Development</h3>
+<p>■ Metaphors are heuristics, not algorithms. As such, they tend to be a little sloppy.
+■ Metaphors help you understand the software-development process by relating it
+to other activities you already know about.
+■ Some metaphors are better than others.
+■ Treating software construction as similar to building construction suggests that careful preparation is needed and illuminates the difference between large and small projects.
+■ Thinking of software-development practices as tools in an intellectual toolbox suggests further that every programmer has many tools and that no single tool is right for every job. Choosing the right tool for each problem is one key to being an effective programmer.
+■ Metaphors are not mutually exclusive. Use the combination of metaphors that works best for you.</p>
+<h2 id="chapter-three">Chapter Three</h2>
+<p>Measure Twice Cut Once: Upstream Prerequisites
+Paying attention to quality is the best way to improve productivity
+Risk Reduction
+Upstream work
+Construction Prerequistes
+If Requirements are contaminated they contaminate the architecture and that contaminates construction
+cost to fix a defect rises from the time its introduced to when its detected</p>
+<p>3.1 Importance of Prerequisites
+3.2 Determine the Kind of Software You’re Working On
+3.3 Problem-Definition Prerequisite
+3.4 Requirements Prerequisite
+25% changes in requirements during development
+3.5 Architecture Prerequisite</p>
+<p>Handling Requirements Changes During Construction</p>
+<p>design—architecture refers to design constraints that apply systemwide, whereas high- level design refers to design constraints that apply at the subsystem or multiple-class level, but not necessarily systemwide.</p>
+<p>Achitectural Components
+Program Organization
+Major Classes
+Data Design
+Business Rules
+User Interface Design
+Resource Management
+Security
+Performance
+Scalability
+Interoperability
+Internationalization/Localization
+Input/Output
+Error Processing **
+Fault Tolerance
+Architectural Feasibility
+Overengineering
+Buy vs Build Decsions
+Reuse Decisions
+Change Strategy
+General Architectural Quality
+General Software-Development Approaches
+Many books are available that map out different approaches to conducting a software project. Some are more sequential, and some are more iterative</p>
+<p>■ The overarching goal of preparing for construction is risk reduction. Be sure your preparation activities are reducing risks, not increasing them.
+■ If you want to develop high-quality software, attention to quality must be part of the software-development process from the beginning to the end. Attention to quality at the beginning has a greater influence on product quality than atten- tion at the end.
+■ Part of a programmer’s job is to educate bosses and coworkers about the soft- ware-development process, including the importance of adequate preparation before programming begins.
+■ The kind of project you’re working on significantly affects construction prereq- uisites—many projects should be highly iterative, and some should be more sequential.
+■ If a good problem definition hasn’t been specified, you might be solving the wrong problem during construction.
+Key Points 59
+Checklist: Upstream Prerequisites
+❑ Have you identified the kind of software project you’re working on and tai- lored your approach appropriately?
+❑ Are the requirements sufficiently well defined and stable enough to begin construction? (See the requirements checklist for details.)
+❑ Is the architecture sufficiently well defined to begin construction? (See the architecture checklist for details.)
+❑ Have other risks unique to your particular project been addressed, such that construction is not exposed to more risk than necessary?
+60 Chapter 3: Measure Twice, Cut Once: Upstream Prerequisites
+■ If good requirements work hasn’t been done, you might have missed important details of the problem. Requirements changes cost 20 to 100 times as much in the stages following construction as they do earlier, so be sure the requirements are right before you start programming.
+■ If a good architectural design hasn’t been done, you might be solving the right problem the wrong way during construction. The cost of architectural changes increases as more code is written for the wrong architecture, so be sure the archi- tecture is right, too.
+■ Understand what approach has been taken to the construction prerequisites on your project, and choose your construction approach accordingly.</p>
+<p>Chapter 4
+Key Construction Decisions</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/hands_on_architecture/"
+      ><span>Hands On Arcitecture</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

@@ -324,3 +324,4 @@ Whenever a new value is inserted, the corresponding counters are incremented and
 Reservoir sampling is an algorithm/data structure that enables these types of queries. First, we create a reservoir (array) of a size equal to the sample size required. In our case, say, 10. The first 10 elements are ingested as-in in the set.
 
 # Scaling Data 
+
