@@ -52,7 +52,7 @@ business rules to validate some paramters caching ideompotency and thread safety
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
       <guid>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</guid>
-      <description>Chapter One Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+      <description>Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
 Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types</description>
     </item>
     

@@ -4,7 +4,7 @@ date: 2022-11-13T16:56:59+13:00
 draft: false
 ---
 
-## Chapter One
+## Chapter Two
 Classification of data structures and structural design patterns
 Representation of algorithms
 Complexity and performance analysis
