@@ -27,7 +27,7 @@ to other activities you already know about.
 ■ Metaphors are not mutually exclusive. Use the combination of metaphors that works best for you.
 
 ## Chapter Three 
-Measure Twice Cut Once: Upstream Prerequisites
+### Measure Twice Cut Once: Upstream Prerequisites
 Paying attention to quality is the best way to improve productivity
 Risk Reduction 
 Upstream work 
@@ -86,9 +86,38 @@ Checklist: Upstream Prerequisites
 ■ If a good architectural design hasn’t been done, you might be solving the right problem the wrong way during construction. The cost of architectural changes increases as more code is written for the wrong architecture, so be sure the archi- tecture is right, too.
 ■ Understand what approach has been taken to the construction prerequisites on your project, and choose your construction approach accordingly.
 
-Chapter 4
-Key Construction Decisions
+## Chapter 4
+### Key Construction Decisions
+Every programming language has strengths and weaknesses. Be aware of the specific strengths and weaknesses of the language you’re using.
+■ Establish programming conventions before you begin programming. It’s nearly impossible to change code to match them later.
+■ More construction practices exist than you can use on any single project. Con- sciously choose the practices that are best suited to your project.
+■ Ask yourself whether the programming practices you’re using are a response to the programming language you’re using or controlled by it. Remember to pro- gram into the language, rather than programming in it.
+■ Your position on the technology wave determines what approaches will be effec- tive—or even possible. Identify where you are on the technology wave, and adjust your plans and expectations accordingly.
 
 
+## Chapter 5
+### Design In Construction 
 
+Here’s a summary of major design heuristics:
+■ Find Real-World Objects
+■ Form Consistent Abstractions
+■ Encapsulate Implementation Details ■ Inherit When Possible
+■ Hide Secrets (Information Hiding) ■ Identify Areas Likely to Change
+■ Keep Coupling Loose
+■ Look for Common Design Patterns
+
+The following heuristics are sometimes useful too:
+■ Aim for Strong Cohesion
+■ Build Hierarchies
+■ Formalize Class Contracts
+■ Assign Responsibilities
+■ Design for Test
+■ Avoid Failure
+■ Choose Binding Time Consciously
+■ Make Central Points of Control
+■ Consider Using Brute Force
+■ Draw a Diagram
+■ Keep Your Design Modular
+
+5.4 Design Practices
 

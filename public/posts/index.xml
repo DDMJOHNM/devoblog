@@ -27,17 +27,6 @@ Coaching and Mentoring Developers Outside of their normal deliverables Target St
     </item>
     
     <item>
-      <title>Profiling</title>
-      <link>https://devblog-2u3g.onrender.com/posts/profiling/</link>
-      <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/profiling/</guid>
-      <description>Program analysis tools are extremely important for understanding program behavior. Computer architects need such tools to evaluate how well programs will perform on new architectures. Software writers need tools to analyze their programs and identify critical sections of code. Compiler writers often use such tools to find out how well their instruction scheduling or branch prediction algorithm is performing&amp;hellip;
-The output of a profiler may be:
-A statistical summary of the events observed (a profile) Summary profile information is often shown annotated against the source code statements where the events occur, so the size of measurement data is linear to the code size of the program</description>
-    </item>
-    
-    <item>
       <title>Python AI Development</title>
       <link>https://devblog-2u3g.onrender.com/posts/python/</link>
       <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
@@ -63,9 +52,8 @@ business rules to validate some paramters caching ideompotency and thread safety
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
       <guid>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</guid>
-      <description>Learn Data Structures and Algorithms with Golang Data structure organization of a computers memory, in order to retrive it quickly for processing.
-Classification of data structures. Linear -Lists, sets, tuples, queues, stacks, and heaps.
-Doubly Linked List package main import ( &amp;#34;fmt&amp;#34; ) //connected to two nodes can traverse backward and forward type Node struct{ property int nextNode *Node previousNode *Node	} type LinkedList struct{ headNode *Node } func (linkedList *LinkedList) AddToHead(property int){ } func (linkedList *LinkedList) IterateList(){ } func (linkedList * LinkedList) NodeBetweenValues(firstProperty int, secondProperty int) *Node{ } func main(){ //add to head method linkedList := LinkedList{} } Heaps package main import ( &amp;#34;container/heap&amp;#34; &amp;#34;fmt&amp;#34; ) //Heaps - data structure based on a heap property //used in selection, graph and kway merge alogrithms //operations such as finding, insertion keys changes and deleting all perfromed on heaps //heap order value is stored at each node is greater than equal to its children //order descending max heap otherwise minimum heap //not sorted but partial sorted //heap structure, heap sorting alogrithm //a php example https://www.</description>
+      <description>Chapter One Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types</description>
     </item>
     
     <item>
