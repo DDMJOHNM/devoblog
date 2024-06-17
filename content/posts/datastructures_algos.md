@@ -352,3 +352,502 @@ This chapter covered the definition of abstract datatypes, classifying data stru
 
 We looked at the classification of data structures and structural design patterns. You can use algorithms such as brute force, divide and conquer, and backtracking by calculating the complexity and performance analysis. The choice of algorithm and the use of design patterns and data structures are the key takeaways.
 
+## Chapter Three 
+
+In this chapter, we will discuss the following Go language-specific data structures:
+
+Arrays
+Slices
+Two-dimensional slices
+Maps
+Database operations
+Variadic functions
+CRUD web forms
+
+## Chapter Five - Linear Data Structures
+
+Various applications, such as Facebook, Twitter, and Google, use lists and linear data structures. As we have discussed previously, data structures allow us to organize vast swathes of data in a sequential and organized manner, thereby reducing time and effort in working with such data. Lists, stacks, sets, and tuples are some of the commonly used linear data structures.
+
+### Lists
+A list is a collection of ordered elements that are used to store list of items. Unlike array lists, these can expand and shrink dynamically.
+Lists also be used as a base for other data structures, such as stack and queue.
+
+- Linked List 
+is a sequence of nodes that have properties and a reference to the next node in the sequence. 
+The data structure permits the addition and deletion of components from any node next to another node.
+Linked list will have a set of nodes with integer properties, as follows:
+
+```
+//Node class
+
+type Node struct {
+    property int
+    nextNode *Node
+}
+
+// LinkedList class
+type LinkedList struct {
+    headNode *Node
+}
+
+//AddToHead method of LinkedList class
+func (linkedList *LinkedList) AddToHead(property int) {
+    var node = Node{}
+    node.property = property
+    if node.nextNode != nil {
+        node.nextNode = linkedList.headNode
+    }
+    linkedList.headNode = &node
+}
+
+// main method
+func main() {
+    var linkedList LinkedList
+    linkedList = LinkedList{}
+    linkedList.AddToHead(1)
+    linkedList.AddToHead(3)
+    fmt.Println(linkedList.headNode.property)
+}
+
+//IterateList method iterates over LinkedList
+func (linkedList *LinkedList) IterateList() {
+    var node *Node
+    for node = linkedList.headNode; node != nil; node = node.nextNode {
+        fmt.Println(node.property)
+    }
+}
+
+//LastNode method returns the last Node
+func (linkedList *LinkedList) LastNode() *Node{
+ var node *Node
+ var lastNode *Node
+ for node = linkedList.headNode; node != nil; node = node.nextNode {
+ if node.nextNode ==nil {
+ lastNode = node
+ }
+ }
+ return lastNode
+}
+
+//AddToEnd method adds the node with property to the end
+
+func (linkedList *LinkedList) AddToEnd(property int) {
+ var node = &Node{}
+ node.property = property
+ node.nextNode = nil
+ var lastNode *Node
+ lastNode = linkedList.LastNode()
+ if lastNode != nil {
+ lastNode.nextNode = node
+ }
+}
+
+//NodeWithValue method returns Node given parameter property
+
+func (linkedList *LinkedList) NodeWithValue(property int) *Node{
+ var node *Node
+ var nodeWith *Node
+ for node = linkedList.headNode; node != nil; node = node.nextNode {
+ if node.property == property {
+ nodeWith = node
+ break;
+ }
+ }
+ return nodeWith
+}
+
+//AddAfter method adds a node with nodeProperty after node with property
+
+func (linkedList *LinkedList) AddAfter(nodeProperty int,property int) {
+ var node = &Node{}
+ node.property = property
+ node.nextNode = nil
+ var nodeWith *Node
+ nodeWith = linkedList.NodeWithValue(nodeProperty)
+ if nodeWith != nil {
+ node.nextNode = nodeWith.nextNode
+ nodeWith.nextNode = node
+ }
+}
+
+// main method
+func main() {
+    var linkedList LinkedList
+    linkedList = LinkedList{}
+    linkedList.AddToHead(1)
+    linkedList.AddToHead(3)
+    linkedList.AddToEnd(5)
+    linkedList.AddAfter(1,7)
+    linkedList.IterateList()
+}
+
+```
+
+- Doubly Linked List
+In a doubly linked list, all nodes have a pointer to the node they are connected to, on either side of them, in the list.
+This means that each node is connected to two nodes, and we can traverse forward through to the next node or backward through to the previous node. 
+Doubly linked lists allow insertion, deletion and, obviously, traversing operations. 
+
+```
+// Node class
+type Node struct {
+    property int
+    nextNode *Node
+    previousNode *Node
+}
+
+//NodeBetweenValues method of LinkedList
+func (linkedList *LinkedList) NodeBetweenValues(firstProperty int,secondProperty int) *Node{
+    var node *Node
+    var nodeWith *Node
+    for node = linkedList.headNode; node != nil; node = node.nextNode {
+        if node.previousNode != nil && node.nextNode != nil {
+            if node.previousNode.property == firstProperty && node.nextNode.property ==    
+            secondProperty{
+               nodeWith = node
+               break;
+            }
+        }
+    }
+    return nodeWith
+}
+
+//AddToHead method of LinkedList
+func (linkedList *LinkedList) AddToHead(property int) {
+ var node = &Node{}
+ node.property = property
+ node.nextNode = nil
+ if linkedList.headNode != nil {
+ node.nextNode = linkedList.headNode
+ linkedList.headNode.previousNode = node
+ }
+ linkedList.headNode = node
+}
+
+//AddAfter method of LinkedList
+func (linkedList *LinkedList) AddAfter(nodeProperty int,property int) {
+ var node = &Node{}
+ node.property = property
+ node.nextNode = nil
+ var nodeWith *Node
+ nodeWith = linkedList.NodeWithValue(nodeProperty)
+ if nodeWith != nil {
+ 
+ node.nextNode = nodeWith.nextNode
+ node.previousNode = nodeWith
+ nodeWith.nextNode = node
+ }
+}
+
+//AddToEnd method of LinkedList
+func (linkedList *LinkedList) AddToEnd(property int) {
+ var node = &Node{}
+ node.property = property
+ node.nextNode = nil
+ var lastNode *Node
+ lastNode = linkedList.LastNode()
+ if lastNode != nil {
+ 
+ lastNode.nextNode = node
+ node.previousNode = lastNode
+ }
+}
+
+// main method
+func main() {
+ var linkedList LinkedList
+ linkedList = LinkedList{}
+ linkedList.AddToHead(1)
+ linkedList.AddToHead(3) linkedList.AddToEnd(5)
+ linkedList.AddAfter(1,7)
+ fmt.Println(linkedList.headNode.property)
+ var node *Node
+ node = linkedList.NodeBetweenValues(1,5)
+ fmt.Println(node.property)
+}
+
+```
+
+### Sets 
+A Set is a linear data structure that has a collection of values that are not repeated. A set can store unique values without any particular order. 
+Dynamic and mutable sets allow for the insertion and deletion of elements.
+Algebraic operations such as union, intersection, difference, and subset can be defined on the sets. 
+The following example shows the Set integer with a map integer key and bool as a value:
+
+```
+package main
+// importing fmt package
+import (
+ "fmt"
+)
+//Set class
+type Set struct {
+ integerMap map[int]bool
+}
+
+//create the map of integer and bool
+func (set *Set) New(){
+ set.integerMap = make(map[int]bool)
+}
+
+// adds the element to the set
+func (set *Set) AddElement(element int){
+ if !set.ContainsElement(element) {
+  set.integerMap[element] = true
+ }
+}
+
+
+
+```
+
+### Tuples
+
+Tuples are finite ordered sequences of objects. They can contain a mixture of other data types and are used to group related data into a data structure. In a relational database, a tuple is a row of a table. Tuples have a fixed size compared to lists, and are also faster. A finite set of tuples in the relational database is referred to as a relation instance. A tuple can be assigned in a single statement, which is useful for swapping values. Lists usually contain values of the same data type, while tuples contain different data.
+
+### Queues
+
+A queue consists of elements to be processed in a particular order or based on priority. A priority-based queue of orders is shown in the following code, structured as a heap. Operations such as enqueue, dequeue, and peek can be performed on queue. A queue is a linear data structure and a sequential collection. Elements are added to the end and are removed from the start of the collection. Queues are commonly used for storing tasks that need to be done, or incoming HTTP requests that need to be processed by a server. In real life, handling interruptions in real-time systems, call handling, and CPU task scheduling are good examples for using queues.
+
+//new //add method order parameter added to queue.
+
+Synchronized queue
+A synchronized queue consists of elements that need to be processed in a particular sequence. Passenger queue and ticket processing queues are types of synchronized queues.
+
+### Stacks
+A stack is a last in, first out structure in which items are added from the top. Stacks are used in parsers for solving maze algorithms. Push, pop, top, and get size are the typical operations that are allowed on stack data structures. Syntax parsing, backtracking, and compiling time memory management are some real-life scenarios where stacks can be used. An example of stack implementation is as follows (stack.go):
+
+## Chapter 6
+Non Linear Data Structures 
+Non-linear data structures are used in cryptography and other areas. A non-linear data structure is an arrangement in which an element is connected to many elements. These structures use memory quickly and efficiently. Free contiguous memory is not required for adding new elements.
+
+The length of the data structures is not important before adding new elements. A non-linear data structure has multiple levels and a linear one has a single level. The values of the elements are not organized in a non-linear data structure. The data elements in a non-linear data structure cannot be iterated in one step. The implementation of these data structures is complicated.
+
+Tree types such as binary search trees, treaps, and symbol tables are explained in this chapter.
+
+This chapter covers the following non-linear data structures:
+
+Trees
+Tables
+Containers
+Hash functions
+
+
+## Trees
+A tree is a non-linear data structure. Trees are used for search and other use cases. A binary tree has nodes that have a maximum of two children. A binary search tree consists of nodes where the property values of the left node are less than the property values of the right node. The root node is at level zero of a tree. Each child node could be a leaf.
+
+### Binary Search Tree
+A binary search tree is a data structure that allows for the quick lookup, addition, and removal of elements. It stores the keys in a sorted order to enable a faster lookup. This data structure was invented by P. F. Windley, A. D. Booth, A. J. T. Colin, and T. N. Hibbard. On average, space usage for a binary search tree is of the order O(n), whereas the insert, search, and delete operations are of the order O(log n). A binary search tree consists of nodes with properties or attributes:
+
+key integer
+value integer
+leftnode and right node instances of the treenode
+
+### AVL Tree
+height adjusting binary search trees 
+The balance factor is obtained by finding the difference between the heights of the left and right sub-trees. Balancing is done using rotation techniques. If the balance factor is greater than one, rotation shifts the nodes to the opposite of the left or right sub-trees. The search, addition, and deletion operations are processed in the order of O(log n).
+
+### B+ Tree
+### B- Tree
+### T-Tree
+
+
+### Tables
+
+A table class has an array of rows and column names
+
+### Symbol Tables
+A symbol table is present in memory during the program translation process. It can be present in program binaries. A symbol table contains the symbol's name, location, and address. In Go, the gosym package implements access to the Go symbol and line number tables. Go binaries generated by the GC compilers have the symbol and line number tables. A line table is a data structure that maps program counters to line numbers.
+
+
+### Containers
+The containers package provides access to the heap, list, and ring functionalities in Go. Containers are used in social networks, knowledge graphs, and other areas. Containers are lists, maps, slices, channels, heaps, queues, and treaps. 
+
+### Ring is a circular linked list 
+container ring 
+
+### Hash functions
+Hash functions are used in cryptography and other areas. These data structures are presented with code examples related to cryptography. There are two ways to implement a hash function in Go: with crc32 or sha256. Marshaling (changing the string to an encoded form) saves the internal state, which is used for other purposes later. A BinaryMarshaler (converting the string into binary form) example is explained in this section:
+
+## Chapter 7
+### Homogenous Data Structures
+
+-simular types of data 
+
+- Two-dimensional arrays
+- Multi-dimensional arrays
+
+Matrix representation
+Multiplication
+Addition
+Subtraction
+Determinant calculation
+Inversion
+Transposition
+
+## Chapter 8
+### Hetrogeneous data structures 
+
+Hetrogeneous data structures contain diverse types of data such as integers, doubles and floats
+linked lists and ordered lists used for memory management 
+linked list is a chain of elements that are associated together by means of pointers 
+memory utilised can be allocated dynamically dont have to take a block of memory 
+
+linked lists
+ordered lists
+unorderered lists
+
+singly linked list dynamic data structure in which additional and removal operations are easy
+random retrieval not possible as youll have to travers the list of nodes for a positioned node
+
+doubly linked list
+data structure that consisits of nodes that have links to previous and next nodes
+circular linked lists last node connected to the first
+
+
+Ordered list: By creating a group of methods for the slice data type and calling sort
+
+Unordered list: The other way is to invoke sort.Slice with a custom less function
+sort by factor
+mulitsorter
+
+unordered list
+relative positions in contiguous memory do not need to be maintained
+
+## Chapter 9 
+### Dynamic Data Structures 
+
+```
+A dynamic data structure is a set of elements in memory that has the adaptability to expand or shrink. This ability empowers a software engineer to control precisely how much memory is used. Dynamic data structures are used for handling generic data in a key-value store. They can be used in distributed caching and storage management. Dynamic data structures are valuable in many circumstances in which dynamic addition or deletion of elements occur. They are comparable in capacity to a smaller relational database or an in-memory database. These data structures are used in marketing and customer relationship management applications. Dictionaries, TreeSets, and sequences are examples of dynamic data structures.
+```
+
+### Dictionaries 
+
+Collection of Unique Key Value Pairs 
+Distributed Caching
+In Memory Databases 
+Keys can be any type 
+can have duplicate values
+add, remove and lookup operations 
+
+```
+
+type DictVal string 
+
+type Dictionary Struct{
+    elements map[DictKey]DictVal
+    lock sync.RWMutex
+}
+
+// Put method
+func (dict *Dictionary) Put(key DictKey, value DictVal) {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    if dict.elements == nil {
+        dict.elements = make(map[DictKey]DictVal)
+    }
+    dict.elements[key] = value
+}
+
+// Remove method
+func (dict *Dictionary) Remove(key DictKey) bool {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    var exists bool
+    _, exists = dict.elements[key]
+    if exists {
+        delete(dict.elements, key)
+    }
+    return exists
+}
+
+// Contains method
+func (dict *Dictionary) Contains(key DictKey) bool {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var exists bool
+    _, exists = dict.elements[key]
+    return exists
+}
+
+// Find method
+func (dict *Dictionary) Find(key DictKey) DictVal {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    return dict.elements[key]
+}
+
+// Reset method
+func (dict *Dictionary) Reset() {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    dict.elements = make(map[DictKey]DictVal)
+}
+
+// NumberOfElements method
+func (dict *Dictionary) NumberOfElements() int {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    return len(dict.elements)
+}
+
+// GetKeys method
+func (dict *Dictionary) GetKeys() []DictKey {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var dictKeys []DictKey
+    dictKeys = []DictKey{}
+    var key DictKey
+    for key = range dict.elements {
+        dictKeys = append(dictKeys, key)
+    }
+    return dictKeys
+}
+
+// GetValues method 
+func (dict *Dictionary) GetValues() []DictVal {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var dictValues []DictVal
+    dictValues = []DictVal{}
+    var key DictKey
+    for key = range dict.elements {
+        dictValues = append(dictValues, dict.elements[key])
+    }
+    return dictValues
+}
+
+// main method
+func main() {
+  var dict *Dictionary = &Dictionary{}
+  dict.Put("1","1")
+  dict.Put("2","2")
+  dict.Put("3","3")
+  dict.Put("4","4")
+  fmt.Println(dict)
+}
+
+```
+
+### TreeSets
+TreeSets are used in marketing and customer relationship management applications. 
+TreeSet is a set that has a binary tree with unique elements. 
+The elements are sorted in a natural order. 
+In the following code snippet, TreeSet creation, insertion, search, and stringify operations are presented. 
+TreeSet allows only one null value if the set is empty. 
+The elements are sorted and stored as elements. 
+The add, remove, and contains functions cost log(n) on TreeSets:
+
+```
+package main
+
+// TreeSet class
+type TreeSet struct {
+  bst *BinarySearchTree
+}
+
+
+
+
+
+```
