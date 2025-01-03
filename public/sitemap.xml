@@ -2,46 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://devblog-2u3g.onrender.com/posts/code_complete/</loc>
+    <loc>http://localhost:1313/posts/code_complete/</loc>
     <lastmod>2024-01-01T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-01-01T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2024-01-01T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/hands_on_architecture/</loc>
+    <loc>http://localhost:1313/posts/hands_on_architecture/</loc>
     <lastmod>2023-04-06T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/python/</loc>
+    <loc>http://localhost:1313/posts/python/</loc>
     <lastmod>2023-04-06T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/design_patterns/</loc>
+    <loc>http://localhost:1313/posts/design_patterns/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</loc>
+    <loc>http://localhost:1313/posts/datastructures_algos/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/database_design/</loc>
+    <loc>http://localhost:1313/posts/database_design/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/design_principles/</loc>
+    <loc>http://localhost:1313/posts/design_principles/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/full_stack_web_dev_go/</loc>
+    <loc>http://localhost:1313/posts/full_stack_web_dev_go/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/grind75/</loc>
+    <loc>http://localhost:1313/posts/grind75/</loc>
     <lastmod>2022-11-13T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/adrs/</loc>
+    <loc>http://localhost:1313/posts/adrs/</loc>
     <lastmod>2022-10-18T16:56:59+13:00</lastmod>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/posts/react/</loc>
+    <loc>http://localhost:1313/posts/go_project_prep/</loc>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/categories/</loc>
+    <loc>http://localhost:1313/posts/react/</loc>
   </url><url>
-    <loc>https://devblog-2u3g.onrender.com/tags/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
   </url>
 </urlset>
