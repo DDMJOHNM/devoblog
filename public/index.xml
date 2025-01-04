@@ -6,18 +6,15 @@
     <description>Recent content on Devblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Nov 2022 16:56:59 +1300</lastBuildDate><atom:link href="https://devblog-2u3g.onrender.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 Dec 2024 16:56:59 +1300</lastBuildDate><atom:link href="https://devblog-2u3g.onrender.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Style Guide</title>
       <link>https://devblog-2u3g.onrender.com/posts/go_style_notes/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
+      <pubDate>Fri, 13 Dec 2024 16:56:59 +1300</pubDate>
       
       <guid>https://devblog-2u3g.onrender.com/posts/go_style_notes/</guid>
-      <description>Canonical: Establishes prescriptive and enduring rules
-Normative: Intended to establish consistency
-Idiomatic: Common and familiar (Pattern)
-See Additonal References for context links in reviews
-Style Principles  Clarity: codes purpose and rationale is clear to the reader   What is the code actually doing.  Use more descriptive variable names Add additional commentary Break up the code with whitespace and comments Refactor the code into separate functions/methods to make it more modular</description>
+      <description>Canonical: Establishes prescriptive and enduring rules Normative: Intended to establish consistency Idiomatic: Common and familiar (Pattern) Style Principles Clarity: codes purpose and rationale is clear to the reader  What is the code actually doing.  Use more descriptive variable names Add additional commentary Break up the code with whitespace and comments Refactor the code into separate functions/methods to make it more modular
+Why is the code doing what it actually does.</description>
     </item>
     
   </channel>
