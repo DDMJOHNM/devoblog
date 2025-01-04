@@ -1,7 +1,7 @@
 ---
 title: "Code Complete - Steve McConnell"
 date: 2024-01-01T16:56:59+13:00
-draft: false
+draft: true
 ---
 
 ## Chapter One

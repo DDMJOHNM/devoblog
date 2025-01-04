@@ -1,33 +1,19 @@
-
-Go Style Guide
-
-https://google.github.io/styleguide/go/
-https://google.github.io/styleguide/go/guide
-https://go.dev/doc/effective_go
-
-Go Proverbs
-
-https://go-proverbs.github.io/
+---
+title: "Go Style Guide"
+date: 2024-12-13T16:56:59+13:00
+draft: false
+---
 
 
-Go Best Practises
-https://google.github.io/styleguide/go/best-practices
-https://abseil.io/resources/swe-book/html/ch13.html#basic_concepts
+## Canonical: Establishes prescriptive and enduring rules
 
+## Normative: Intended to establish consistency
 
-
-
-Canonical: Establishes prescriptive and enduring rules
-
-Normative: Intended to establish consistency
-
-Idiomatic: Common and familiar (Pattern)
-
-See Additonal References for context links in reviews 
+## Idiomatic: Common and familiar (Pattern)
 
 ## Style Principles
 
-- Clarity: codes purpose and rationale is clear to the reader 
+### Clarity: codes purpose and rationale is clear to the reader 
 
 1. What is the code actually doing. 
 
@@ -51,7 +37,7 @@ The Google codebase is largely uniform and consistent. It is often the case that
 
 Good runnable examples in the same package, which benefit both users (they show up in godoc) and maintainers (they run as part of tests).
 
-- Simplicity: code accomplishes its goal in the simplest possible way
+### Simplicity: code accomplishes its goal in the simplest possible way
 
 Your Go code should be simple for those using, reading, and maintaining it.
 Go code should be written in the simplest way that accomplishes its goals, both in terms of behavior and performance.
@@ -75,16 +61,17 @@ This principle does not imply that complex code cannot or should not be written 
 
 If code turns out to be very complex when its purpose should be simple, this is often a signal to revisit the implementation to see if there is a simpler way to accomplish the same thing.
 
-Least Mechanism 
+### Least Mechanism 
 
-Where there are several ways to express the same idea, prefer the one that uses the most standard tools. Sophisticated machinery often exists, but should not be employed without reason. It is easy to add complexity to code as needed, whereas it is much harder to remove existing complexity after it has been found to be unnecessary.
+Where there are several ways to express the same idea, prefer the one that uses the most standard tools. Sophisticated machinery often exists, but should not be employed without reason. 
+It is easy to add complexity to code as needed, whereas it is much harder to remove existing complexity after it has been found to be unnecessary.
 
 Aim to use a core language construct (for example a channel, slice, map, loop, or struct) when sufficient for your use case.
 If there isn’t one, look for a tool within the standard library (like an HTTP client or a template engine).
 Finally, consider whether there is a core library in the Google codebase that is sufficient before introducing a new dependency or creating your own.
 
 
-- Concision: code has a high signal to noise ratio
+### Concision: code has a high signal to noise ratio
 
 Concise Go code has a high signal-to-noise ratio. It is easy to discern the relevant details, and the naming and structure guide the reader through these details.
 
@@ -96,7 +83,8 @@ Opaque names
 Unnecessary abstraction
 Whitespace
 
-Repetitive code especially obscures the differences between each nearly-identical section, and requires a reader to visually compare similar lines of code to find the changes. Table-driven testing is a good example of a mechanism that can concisely factor out the common code from the important details of each repetition, but the choice of which pieces to include in the table will have an impact on how easy the table is to understand.
+Repetitive code especially obscures the differences between each nearly-identical section, and requires a reader to visually compare similar lines of code to find the changes. 
+Table-driven testing is a good example of a mechanism that can concisely factor out the common code from the important details of each repetition, but the choice of which pieces to include in the table will have an impact on how easy the table is to understand.
 
 Understanding and using common code constructions and idioms are also important for maintaining a high signal-to-noise ratio. For example, the following code block is very common in error handling, and the reader can quickly understand the purpose of this block.
 
@@ -107,7 +95,7 @@ if err := doSomething(); err != nil {
 }
 ```
 
-- Maintainability: the code is written as such as it can be maintained
+### Maintainability: the code is written as such as it can be maintained
 
 Code is edited many more times than it is written. Readable code not only makes sense to a reader who is trying to understand how it works, but also to the programmer who needs to change it. Clarity is key.
 
@@ -140,7 +128,7 @@ Maintainable code minimizes its dependencies (both implicit and explicit). Depen
 
 When considering how to structure or write code, it is worth taking the time to think through ways in which the code may evolve over time. If a given approach is more conducive to easier and safer future changes, that is often a good trade-off, even if it means a slightly more complicated design.
 
-- Consistentcy: the code is consisitent with the broader google codebase.
+### Consistency: the code is consisitent with the broader google codebase.
 
 Consistency within a package is often the most immediately important level of consistency. It can be very jarring if the same problem is approached in multiple ways throughout a package, or if the same concept has many names within a file. However, even this should not override documented style principles or global consistency.
 
@@ -194,5 +182,22 @@ Use of assertion-based testing libraries
 If the local style disagrees with the style guide but the readability impact is limited to one file, it will generally be surfaced in a code review for which a consistent fix would be outside the scope of the CL in question. At that point, it is appropriate to file a bug to track the fix.
 
 If a change would worsen an existing style deviation, expose it in more API surfaces, expand the number of files in which the deviation is present, or introduce an actual bug, then local consistency is no longer a valid justification for violating the style guide for new code. In these cases, it is appropriate for the author to clean up the existing codebase in the same CL, perform a refactor in advance of the current CL, or find an alternative that at least does not make the local problem worse.
+
+
+## Go Style Guide
+
+https://google.github.io/styleguide/go/
+https://google.github.io/styleguide/go/guide
+https://go.dev/doc/effective_go
+
+## Go Proverbs
+
+https://go-proverbs.github.io/
+
+
+## Go Best Practises
+
+https://google.github.io/styleguide/go/best-practices
+https://abseil.io/resources/swe-book/html/ch13.html#basic_concepts
 
 

@@ -62,7 +62,7 @@
   
   
   <meta name="description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
-Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
   <meta name="author" content="John Mason" />
   
 
@@ -125,7 +125,7 @@ Reduce storage space and differculty while performing specific tasks Data Struct
   <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.115.4">
+  <meta name="generator" content="Hugo 0.91.2" />
 
   
   
@@ -139,24 +139,25 @@ Reduce storage space and differculty while performing specific tasks Data Struct
   
   <meta property="og:title" content="Data Structures and Algorithms" />
 <meta property="og:description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
-Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/datastructures_algos/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
 <meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
 
+
   
   <meta itemprop="name" content="Data Structures and Algorithms">
 <meta itemprop="description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
-Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
 <meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="wordCount" content="4923">
+<meta itemprop="wordCount" content="5749">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Data Structures and Algorithms"/>
 <meta name="twitter:description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
-Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"/>
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"/>
 
   
   
@@ -416,9 +417,10 @@ func main (){
     var k int
     for k=0;k&lt;10;k++{
         m[k]= k *200
-        fmt.PrintF(&#34;Element [%d] = %d\n&#34;, k, m[k])
+        fmt.PrintF(&quot;Element [%d] = %d\n&quot;, k, m[k])
     }
 }
+
 </code></pre><h2 id="quadratic-complexity">Quadratic complexity</h2>
 <p>if the processing time is proportional to the square of the number of input elements
 complexity is 10*10=100 two loops have a max of 10
@@ -428,13 +430,15 @@ func main (){
     var k,l int
 
     for k = 1; k &lt;=10; k++{
-        fmt.Println(&#34; Multiplicatipn table&#34;,k)
+        fmt.Println(&quot; Multiplicatipn table&quot;,k)
         for l=1; l&lt;=10; l++{
             var x int = l*k
             fmt.Println(x)
         }
     }
 }
+
+
 </code></pre><h2 id="cubic-complexity">Cubic Complexity</h2>
 <p>In the case of cubic complexity, the processing time of an algorithm is proportional to the cube of the input elements. The complexity of the following algorithm is 10<em>10</em>10 = 1,000. The three loops have a maximum of 10. The cubic complexity for a matrix update is O(n3).</p>
 <p>Cubic complexity O(n3) is explained in the following example:</p>
@@ -445,11 +449,12 @@ func main (){
         for l=0;l&lt;10;l++{
             for m=0;m&lt;10;m++{
                 arr[k][l][m]=1 
-                 fmt.Println(&#34;Element Value&#34;,k,l,m,&#34;is&#34;, arr[k][l][m])
+                 fmt.Println(&quot;Element Value&quot;,k,l,m,&quot;is&quot;, arr[k][l][m])
             }    
         }
     }
 }
+
 </code></pre><h2 id="logarithmic-complexity">Logarithmic complexity</h2>
 <p>An algorithm is of logarithmic complexity if the processing time is proportional to the logarithm of the input elements. The logarithm base is typically 2. The following tree is a binary tree with LeftNode and RightNode. The insert operation is of O(log n) complexity, where n is the number of nodes.</p>
 <p>Logarithmic complexity is presented as follows:</p>
@@ -499,7 +504,7 @@ func main(){
 package main
 // importing fmt package
 import (
- &#34;fmt&#34;
+ &quot;fmt&quot;
 )
 //findElementsWithSum of k from arr of size
 
@@ -512,13 +517,13 @@ if addValue == k {
  num = num +1
  var p int =0
  for p=0; p &lt; m; p++ {
-  fmt.Printf(&#34;%d,&#34;,arr[combinations[p]])
+  fmt.Printf(&quot;%d,&quot;,arr[combinations[p]])
   }
- fmt.Println(&#34; &#34;)
+ fmt.Println(&quot; &quot;)
  }
 var i int
 for i=l; i&lt; size; i++ {
-//fmt.Println(&#34; m&#34;, m)
+//fmt.Println(&quot; m&quot;, m)
 combinations[m] = l
 findElementsWithSum(arr,combinations,size,k,addValue+arr[i],l,m+1)
 l = l+1
@@ -534,6 +539,8 @@ findElementsWithSum(arr,combinations,10,addedSum,0,0,0)
 //fmt.Println(check)//var check2 bool = findElement(arr,9)
 //fmt.Println(check2)
 }
+
+
 </code></pre><p>This chapter covered the definition of abstract datatypes, classifying data structures into linear, nonlinear, homogeneous, heterogeneous, and dynamic types. Abstract datatypes such as container, list, set, map, graph, stack, and queue were presented in this chapter. The chapter covered the performance analysis of data structures and structural design patterns.</p>
 <p>We looked at the classification of data structures and structural design patterns. You can use algorithms such as brute force, divide and conquer, and backtracking by calculating the complexity and performance analysis. The choice of algorithm and the use of design patterns and data structures are the key takeaways.</p>
 <h2 id="chapter-three">Chapter Three</h2>
@@ -658,6 +665,7 @@ func main() {
     linkedList.AddAfter(1,7)
     linkedList.IterateList()
 }
+
 </code></pre><ul>
 <li>Doubly Linked List
 In a doubly linked list, all nodes have a pointer to the node they are connected to, on either side of them, in the list.
@@ -740,6 +748,7 @@ func main() {
  node = linkedList.NodeBetweenValues(1,5)
  fmt.Println(node.property)
 }
+
 </code></pre><h3 id="sets">Sets</h3>
 <p>A Set is a linear data structure that has a collection of values that are not repeated. A set can store unique values without any particular order.
 Dynamic and mutable sets allow for the insertion and deletion of elements.
@@ -748,7 +757,7 @@ The following example shows the Set integer with a map integer key and bool as a
 <pre tabindex="0"><code>package main
 // importing fmt package
 import (
- &#34;fmt&#34;
+ &quot;fmt&quot;
 )
 //Set class
 type Set struct {
@@ -766,6 +775,9 @@ func (set *Set) AddElement(element int){
   set.integerMap[element] = true
  }
 }
+
+
+
 </code></pre><h3 id="tuples-1">Tuples</h3>
 <p>Tuples are finite ordered sequences of objects. They can contain a mixture of other data types and are used to group related data into a data structure. In a relational database, a tuple is a row of a table. Tuples have a fixed size compared to lists, and are also faster. A finite set of tuples in the relational database is referred to as a relation instance. A tuple can be assigned in a single statement, which is useful for swapping values. Lists usually contain values of the same data type, while tuples contain different data.</p>
 <h3 id="queues">Queues</h3>
@@ -941,12 +953,13 @@ func (dict *Dictionary) GetValues() []DictVal {
 // main method
 func main() {
   var dict *Dictionary = &amp;Dictionary{}
-  dict.Put(&#34;1&#34;,&#34;1&#34;)
-  dict.Put(&#34;2&#34;,&#34;2&#34;)
-  dict.Put(&#34;3&#34;,&#34;3&#34;)
-  dict.Put(&#34;4&#34;,&#34;4&#34;)
+  dict.Put(&quot;1&quot;,&quot;1&quot;)
+  dict.Put(&quot;2&quot;,&quot;2&quot;)
+  dict.Put(&quot;3&quot;,&quot;3&quot;)
+  dict.Put(&quot;4&quot;,&quot;4&quot;)
   fmt.Println(dict)
 }
+
 </code></pre><h3 id="treesets">TreeSets</h3>
 <p>TreeSets are used in marketing and customer relationship management applications.
 TreeSet is a set that has a binary tree with unique elements.
@@ -961,6 +974,122 @@ The add, remove, and contains functions cost log(n) on TreeSets:</p>
 type TreeSet struct {
   bst *BinarySearchTree
 }
+
+Insert TreeNode Method
+
+// InsertTreeNode method
+func (treeset *TreeSet) InsertTreeNode(treeNodes ...TreeNode) {
+  var treeNode TreeNode
+  for _, treeNode = range treeNodes {
+    treeset.bst.InsertElement(treeNode.key, treeNode.value)
+  }
+}
+//Delete Method
+//inOrderTraverseTree Method - Traverses from the leftto the root and the to the right
+//preorderTraverseTree Method - method traverses the tree from the root, to the left and right of the tree. The preOrderTraverseTree method takes treeNode and function as parameters. If treeNode is not nil, function is invoked with the value of treeNode, and the preOrderTraverseTree method is invoked with function and leftNode and rightNode as parameters
+//search method -The Search method of the TreeSet class takes a variable argument named treeNodes of the TreeNode type and returns true if one of those treeNodes exists; otherwise, it returns false. The code following snippet outlines the Search method:
+string method contains a string version of bst.
+
+
+Synchronized TreeSets
+Operations that are performed on synchronized TreeSets are synchronized across multiple calls that access the elements of TreeSets. Synchronization in TreeSets is achieved using a sync.RWMutex lock. The lock method on the tree's lock instance is invoked, and the unlock method is deferred before the tree nodes are inserted, deleted, or updated:
+
+
+Mutable TreeSets
+Mutable TreeSets can use add, update, and delete operations on the tree and its nodes. insertTreeNode updates the tree by taking the rootNode and treeNode parameters to be updated. The following code snippet shows how to insert a TreeNode with a given rootNode and TreeNode:
+
+reeset.bst
+The TreeNode's can be updated by accessing treeset.bst and traversing the binary search tree from the rootNode and the left and right nodes of rootNode, as shown here:
+
+
+  var treeset *TreeSet = &amp;TreeSet{}
+  treeset.bst = &amp;BinarySearchTree{} 
+  var node1 TreeNode = TreeNode{8, 8, nil, nil}
+  var node2 TreeNode = TreeNode{3, 3, nil, nil}
+  var node3 TreeNode = TreeNode{10, 10, nil, nil}
+  var node4 TreeNode = TreeNode{1, 1, nil, nil}
+  var node5 TreeNode = TreeNode{6, 6, nil, nil}
+  treeset.InsertTreeNode(node1, node2, node3, node4, node5)
+  treeset.String()
+
+Sequences
+A sequence is a set of numbers that are grouped in a particular order. The number of elements in the stream can be infinite, and these sequences are called streams. A subsequence is a sequence that's created from another sequence. The relative positions of the elements in a subsequence will remain the same after deleting some of the elements in a sequence.
+
+In the following sections, we will take a look at different sequences such as the Farey sequence, Fibonacci sequence, look-and-say, and Thue–Morse.
+
+Farey sequence
+A Farey sequence consists of reduced fractions with values between zero and one. The denominators of the fractions are less than or equal to m, and organized in ascending order. This sequence is called a Farey series. In the following code, reduced fractions are displayed:
+
+Fibonacci sequence
+The Fibonacci sequence consists of a list of numbers in which every number is the sum of the two preceding numbers. Pingala, in 200 BC, was the first to come up with Fibonacci numbers. The Fibonacci sequence is as follows:
+
+Look-and-say
+The look-and-say sequence is a sequence of integers:
+
+The sequence is generated by counting the digits of the previous number in the group. John Conway initially coined the term look-and-say sequence.
+
+The look-and-say sequence is shown in the following code. The look_say method takes a string as a parameter and returns a look-and-say sequence of integers:
+
+The Thue–Morse sequence is a binary sequence starting at zero that appends the Boolean complement of the current sequence.
+
+The Thue–Morse sequence is as follows:
+
+
+The Thue–Morse sequence was applied by Eugene Prophet and used by Axel Thue in the study of combinatorics on words. The Thue–Morse sequence is used in the area of fractal curves, such as Koch snowflakes.
+
+The following code snippet creates the Thue–Morse sequence. The ThueMorseSequence function takes a bytes.Buffer instance buffer and modifies the buffer to the Thue–Morse sequence by applying the complement operation on the bytes:
+
+
+## Classic Algorithms
+
+Canonicalize Data and create readable content 
+Sorting - asc/ desc arrangement 
+Searching - find element in the set
+Recursing - calls itself with input elements 
+Hashing - cryptographic hash technique - maps data with a subject size to a hash with a seettled size, single direction and you cannot alter 
+
+### Sorting Algorithms
+
+best soritng algorithm time is O(n log n)
+
+Sorting algorithms classified by 
+Computational Complexity
+Memory Usage 
+Stability
+Types of Sorting: serial or parallell
+Adaptability
+Method of Sorting
+
+
+Bubble - compares neighbouring elements and swaps them if they are in wrong order
+O(n2) where n is the nof of elements sorted
+smallest or greatest value bubbles up to the top of the collection
+depending on whether you are sorting in asc or desc order
+
+
+## Selectiom Sort 
+
+Divides the input collection into two fragments 
+subset of elements is sorted by swapping the smallest or leargets elemnt from the left of the lis to the right 
+on2
+ineffcient for large collections  perfoms worse than the insertion sort algo rithm.
+
+
+## Insertion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </code></pre></section>
 
   
@@ -1030,7 +1159,7 @@ type TreeSet struct {
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2024
+    &copy; 2025
     <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

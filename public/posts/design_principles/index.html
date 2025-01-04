@@ -129,7 +129,7 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
   <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
 
   
-  <meta name="generator" content="Hugo 0.115.4">
+  <meta name="generator" content="Hugo 0.91.2" />
 
   
   
@@ -152,6 +152,7 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
 <meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/design_principles/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
 <meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
+
 
   
   <meta itemprop="name" content="Design Principles">
@@ -347,7 +348,7 @@ the need for the client to know the specific derived class.
 s
 The interface should be able to suffice for all structs that implement that interface.</p>
 <pre tabindex="0"><code>The client who wants to compute the cancellation fee for a trip does not care about the specific type of reservations in the trip.
- The trip&#39;s code does not know how each reservation computes the cancellation fee.
+ The trip's code does not know how each reservation computes the cancellation fee.
 </code></pre><h2 id="integration-segregation-principle">Integration Segregation Principle</h2>
 <p>Many client specific interfaces are better than one general purpose interface
 avoid derived classes implementing unrelated methods.</p>
@@ -361,6 +362,8 @@ implementation specifics.
 when a package needs a dependancy it should take it as a parameters
 
 Higher level modules should depend on intefaces and not concrete implementations.
+
+
 </code></pre></section>
 
   
@@ -430,7 +433,7 @@ Higher level modules should depend on intefaces and not concrete implementations
   class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
 >
   <div class="mr-auto">
-    &copy; 2024
+    &copy; 2025
     <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
   </div>
   <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"

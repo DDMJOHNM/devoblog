@@ -6,126 +6,18 @@
     <description>Recent content in Posts on Devblog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2024 16:56:59 +1300</lastBuildDate><atom:link href="https://devblog-2u3g.onrender.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Nov 2022 16:56:59 +1300</lastBuildDate><atom:link href="https://devblog-2u3g.onrender.com/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Code Complete - Steve McConnell</title>
-      <link>https://devblog-2u3g.onrender.com/posts/code_complete/</link>
-      <pubDate>Mon, 01 Jan 2024 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/code_complete/</guid>
-      <description>Chapter One Welcome to Software Construction ■ Software construction is the central activity in software development; construc- tion is the only activity that’s guaranteed to happen on every project. ■ The main activities in construction are detailed design, coding, debugging, inte- gration, and developer testing (unit testing and integration testing). ■ Other common terms for construction are “coding” and “programming.” ■ The quality of the construction substantially affects the quality of the software.</description>
-    </item>
-    
-    <item>
-      <title>Hands On Arcitecture</title>
-      <link>https://devblog-2u3g.onrender.com/posts/hands_on_architecture/</link>
-      <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/hands_on_architecture/</guid>
-      <description>Hands on Architecture Role Of the Architect Define a blueprint Requirements Clarification Top level functional and non functional requirements (system qualities) True North Engineering Principles for the system High level design (Decomposition of system into components) Quality Attributes Product Velocity (cicd) a/b testing - every feature has a flag Technology Selection Leadership (Steering and asking tough questions at design meetings)
-Coaching and Mentoring Developers Outside of their normal deliverables Target State vs Current State mvp next bite sized chunks after that Software Architecture vs Design High Level Structure Low Level Implementatiion Details What does Architecture look like?</description>
-    </item>
-    
-    <item>
-      <title>Python AI Development</title>
-      <link>https://devblog-2u3g.onrender.com/posts/python/</link>
-      <pubDate>Thu, 06 Apr 2023 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Creational Design Patterns</title>
-      <link>https://devblog-2u3g.onrender.com/posts/design_patterns/</link>
+      <title>Go Style Guide</title>
+      <link>https://devblog-2u3g.onrender.com/posts/go_style_notes/</link>
       <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
       
-      <guid>https://devblog-2u3g.onrender.com/posts/design_patterns/</guid>
-      <description>object creation mechanisms code using the object does not need to know about how the object is created. Factory Method object used to created other onjects
-func NewReservation(vertical, reservationDate string) Reservation { switch(vertical) { case &amp;#34;flight&amp;#34;: return FlightReservationImpl{reservationDate,} case &amp;#34;hotel&amp;#34;: return HotelReservationImpl{reservationDate,} default: return nil } } Builder not striaght forward
-business rules to validate some paramters caching ideompotency and thread safety multiple constructors arguments create different flavours of an object</description>
-    </item>
-    
-    <item>
-      <title>Data Structures and Algorithms</title>
-      <link>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/datastructures_algos/</guid>
-      <description>Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
-Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types</description>
-    </item>
-    
-    <item>
-      <title>Database Design</title>
-      <link>https://devblog-2u3g.onrender.com/posts/database_design/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/database_design/</guid>
-      <description>Entity Relationship Models DBMS
-data information knowledge intelligence (value of data) From data to actionable insights
-File System Solution
-Separated, isolated data and data duplication Dependancy on applications Incompatible files Lack of data sharing Database Solution
-A structure that contains data Organise data through entities, attributes, relationships Collection of programs that users interact with a database. Popular DBMS
-Microsoft Access MySql Progres MongoDb (NoSql) Advantages
-more information from same amount of data share our data balancing conflicting requirements controlling redundacy consistency Referential integrity expanding security increasing productivity providing data independence.</description>
-    </item>
-    
-    <item>
-      <title>Design Principles</title>
-      <link>https://devblog-2u3g.onrender.com/posts/design_principles/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/design_principles/</guid>
-      <description>Low Level Design
-Responsibility Assignment
-Dependancy Management
-Solid Single Responsibility Principle One class should have one and only one resposibility
-eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
-type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it</description>
-    </item>
-    
-    <item>
-      <title>Full Stack Web Development Go</title>
-      <link>https://devblog-2u3g.onrender.com/posts/full_stack_web_dev_go/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/full_stack_web_dev_go/</guid>
-      <description>1- Creating a backend
-docker
-postgres
-sqlc
-makefile</description>
-    </item>
-    
-    <item>
-      <title>Grind 75</title>
-      <link>https://devblog-2u3g.onrender.com/posts/grind75/</link>
-      <pubDate>Sun, 13 Nov 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/grind75/</guid>
-      <description>Two Sum func twoSum(nums []int, target int) []int { indices := [][]int{} for i := 0; i &amp;lt; len(nums); i++ { for j := i; j &amp;lt; len(nums); j++ { if nums[i]+nums[j] == target { if i != j { indices = append(indices, []int{i, j}) } } } } fmt.Println(indices) return indices[0] } Two Parenthesis package main import ( &amp;#34;container/heap&amp;#34; &amp;#34;fmt&amp;#34; ) type StringHeap []string func (sheap StringHeap) Len() int { return len(sheap) } func (sheap StringHeap) Less(i, j int) bool { return sheap[i] &amp;gt; sheap[j] } func (sheap StringHeap) Swap(i, j int) { sheap[i], sheap[j] = sheap[j], sheap[i] } func (sheap *StringHeap) Push(heapstrf interface{}) { *sheap = append(*sheap, heapstrf.</description>
-    </item>
-    
-    <item>
-      <title>ADRs</title>
-      <link>https://devblog-2u3g.onrender.com/posts/adrs/</link>
-      <pubDate>Tue, 18 Oct 2022 16:56:59 +1300</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/adrs/</guid>
-      <description>https://adr.github.io/ https://github.com/adr
-adrs decision log A “lightweight” ADR consists of title, status, context, decision, and consequences (according to @mtnygard).
-Decision record template by Michael Nygard This is the template in Documenting architecture decisions - Michael Nygard. You can use adr-tools for managing the ADR files.
-We think that the considered options with their pros and cons are crucial to understand the reason of a chosen option. MADR — The Markdown Any/Architecture Decision Records (MADR: [ˈmæɾɚ]) in this ADR organization includes such tradeoff analysis information.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://devblog-2u3g.onrender.com/posts/react/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://devblog-2u3g.onrender.com/posts/react/</guid>
-      <description>Complete Intro to React V8 - Front End Masters Introduction react query new tool v8 version 18 react concurrency </description>
+      <guid>https://devblog-2u3g.onrender.com/posts/go_style_notes/</guid>
+      <description>Canonical: Establishes prescriptive and enduring rules
+Normative: Intended to establish consistency
+Idiomatic: Common and familiar (Pattern)
+See Additonal References for context links in reviews
+Style Principles  Clarity: codes purpose and rationale is clear to the reader   What is the code actually doing.  Use more descriptive variable names Add additional commentary Break up the code with whitespace and comments Refactor the code into separate functions/methods to make it more modular</description>
     </item>
     
   </channel>
