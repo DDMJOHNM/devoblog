@@ -1,7 +1,7 @@
 ---
 title: "Design Principles"
 date: 2022-11-13T16:56:59+13:00
-draft: true
+draft: false
 ---
 Low Level Design 
 

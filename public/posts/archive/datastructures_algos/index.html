@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Data Structures and Algorithms - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://devblog-2u3g.onrender.com/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/github.svg" />
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://devblog-2u3g.onrender.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.91.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Data Structures and Algorithms" />
+<meta property="og:description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/archive/datastructures_algos/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
+<meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
+
+
+  
+  <meta itemprop="name" content="Data Structures and Algorithms">
+<meta itemprop="description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="wordCount" content="5749">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Structures and Algorithms"/>
+<meta name="twitter:description" content="Chapter Two Classification of data structures and structural design patterns Representation of algorithms Complexity and performance analysis Brute force algorithms Divide and conquer algorithms Backtracking algorithms
+ Reduce storage space and differculty while performing specific tasks Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services  Abstract Data types Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://devblog-2u3g.onrender.com"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/DDMJOHNM"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/john-mason-08698bb1"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Data Structures and Algorithms</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 13, 2022</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="chapter-two">Chapter Two</h2>
+<p>Classification of data structures and structural design patterns
+Representation of algorithms
+Complexity and performance analysis
+Brute force algorithms
+Divide and conquer algorithms
+Backtracking algorithms</p>
+<ul>
+<li>Reduce storage space and differculty while performing specific tasks</li>
+<li>Data Structures (Organization of Data ) - handle large amount of data in various fields such as database mgmt and internet indexing services</li>
+</ul>
+<h3 id="abstract-data-types">Abstract Data types</h3>
+<p>Classify into linear, non linear, homgeneuous, hetrogeneous and dynamic types</p>
+<p>Abstract datatypes
+Container
+List
+Set
+Map
+Graph
+Stack
+Queue</p>
+<ol>
+<li>basic alogorithms using the the right data structure and structural design patterns</li>
+<li>performance analysis</li>
+</ol>
+<p>Time and space analysis for different algorithms helps compare them and use the optimal one</p>
+<h2 id="classification-of-data-structure">Classification of Data Structure</h2>
+<p>Orgnization of Data into a Computer MemoryScheme for Data to decouple fucntional defination of Data from its implementation.</p>
+<h3 id="linear">Linear</h3>
+<p>Lists, Sets, Tuples, Queues, Stacks, heaps</p>
+<h3 id="non-linear">Non-Linear</h3>
+<p>Trees, Tables, Containers</p>
+<h3 id="honegenous">Honegenous</h3>
+<p>2D Arrays, Multi Dimensional Arrays</p>
+<h3 id="hetrogeneous">Hetrogeneous</h3>
+<p>Linked Lists, Ordered Lists, Unordered Lists</p>
+<h3 id="dynamic">Dynamic</h3>
+<p>Dictionaries, TreeSets, Sequences</p>
+<h2 id="lists">Lists</h2>
+<p>A sequence of elements, connected with each other forward or backward direction, element can have payload properties</p>
+<h2 id="tuples">Tuples</h2>
+<p>A is a finite sorted list of elements
+groups data immutable sequential collections
+element has a related field of different datatypes</p>
+<h1 id="heaps">Heaps</h1>
+<p>A heap is a data structure based on the heap property
+used in selection, graph and k way merge alogrithms
+finding, merging, insertion and key changes and deleting are performed on heaps
+according to the heap order (maximum heap property) value is stored at each node is greater than or equal to it&rsquo;s children.</p>
+<p>Order is descending then referred to as a maximum heap otherwise minimum heap
+partially ordered datastructure</p>
+<h2 id="structural-design-patterns">Structural design patterns</h2>
+<p>Describe the Relationship between entities
+They are used to form large structures using objects and classes.
+These patterns are used to create a system with different building blocks in a flexible manner.</p>
+<p>Gang of Four (Gof) structural design patterns
+Adapter
+Bridge
+Comopsite
+Decorator
+Facade
+Flyweight
+Private class data
+Proxy</p>
+<h2 id="adapter-dip">Adapter (DIP)</h2>
+<p>Provides a wrapper required by an api client to incompatible types and acts as a translator between the two types.
+A adapter uses the interface of a class to be to be a class with another compatible interface.
+When requirements change there are scenarios where fucntionality needs to be changed because of incompatible intefaces</p>
+<p>target - is the inteface the client calls and invokes methods on the adapter and adaptee<br>
+adaptee
+adapter - translates the incompatible interface implemented by the adapter
+client - wants the incompatible interface implemented by the adapter</p>
+<h2 id="bridge">Bridge</h2>
+<p>Let&rsquo;s say IDrawShape is an interface with the drawShape method. DrawShape implements the IDrawShape interface. We create an IContour bridge interface with the drawContour method. The contour class implements the IContour interface. The ellipse class will have a, b , r properties and drawShape (an instance of DrawShape). The ellipse class implements the contour bridge interface to implement the drawContour method. The drawContour method calls the drawShape method on the drawShape instance.</p>
+<h2 id="composite">Composite</h2>
+<p>A composite is a group of similar objects in a single object. Objects are stored in a tree form to persist the whole hierarchy. The composite pattern is used to change a hierarchical collection of objects.</p>
+<p>The composite pattern is modeled on a heterogeneous collection. New types of objects can be added without changing the interface and the client code.
+component interface, component class, composite, and client:</p>
+<p>Let&rsquo;s say there is an IComposite interface with the perform method and BranchClass that implements IComposite and has the addLeaf, addBranch, and perform methods. The Leaflet class implements IComposite with the perform method. BranchClass has a one-to-many relationship with leafs and branches. Iterating over the branch recursively, one can traverse the composite tree.</p>
+<h2 id="decorator">Decorator</h2>
+<p>In a scenario where class responsibilities are removed or added, the decorator pattern is applied. The decorator pattern helps with subclassing when modifying functionality, instead of static inheritance. An object can have multiple decorators and run-time decorators. The single responsibility principle can be achieved using a decorator. The decorator can be applied to window components and graphical object modeling. The decorator pattern helps with modifying existing instance attributes and adding new methods at run-time.</p>
+<p>The decorator pattern participants are the component interface, the concrete component class, and the decorator class:</p>
+<p>Let &rsquo;s say IProcess is an interface with the process method.
+ProcessClass implements an interface with the process method.
+ProcessDecorator implements the process interface and has an instance of ProcessClass.
+ProcessDecorator can add more functionality than ProcessClass</p>
+<h2 id="facade">Facade</h2>
+<p>Facade is used to abstract subsystem interfaces with a helper. The facade design pattern is used in scenarios when the number of interfaces increases and the system gets complicated. Facade is an entry point to different subsystems, and it simplifies the dependencies between the systems. The facade pattern provides an interface that hides the implementation details of the hidden code.</p>
+<p>A loosely coupled principle can be realized with a facade pattern. You can use a facade to improve poorly designed APIs. In SOA, a service facade can be used to incorporate changes to the contract and implementation.</p>
+<p>For example, account, customer, and transaction are the classes that have account, customer, and transaction creation methods. BranchManagerFacade can be used by the client to create an account, customer, and transaction</p>
+<h2 id="flyweight">Flyweight</h2>
+<p>Flyweight is used to manage the state of an object with high variation. The pattern allows us to share common parts of the object state among multiple objects, instead of each object storing it. Variable object data is referred to as extrinsic state, and the rest of the object state is intrinsic. Extrinsic data is passed to flyweight methods and will never be stored within it. Flyweight pattern helps reduce the overall memory usage and the object initializing overhead. The pattern helps create interclass relationships and lower memory to a manageable level.</p>
+<p>The FlyWeight interface has a method through which flyweights can get and act on the extrinsic state.
+ConcreteFlyWeight implements the FlyWeight interface to represent flyweight objects.
+FlyweightFactory is used to create and manage flyweight objects. The client invokes FlyweightFactory to get a flyweight object. UnsharedFlyWeight can have a functionality that is not shared.
+Client classes</p>
+<h2 id="private-class-data">Private class data</h2>
+<p>The private class data pattern secures the data within a class. This pattern encapsulates the initialization of the class data. The write privileges of properties within the private class are protected, and properties are set during construction. The private class pattern prints the exposure of information by securing it in a class that retains the state. The encapsulation of class data initialization is a scenario where this pattern is applicable.</p>
+<h2 id="proxy">Proxy</h2>
+<p>The proxy pattern forwards to a real object and acts as an interface to others. The proxy pattern controls access to an object and provides additional functionality. The additional functionality can be related to authentication, authorization, and providing rights of access to the resource-sensitive object. The real object need not be modified while providing additional logic. Remote, smart, virtual, and protection proxies are the scenarios where this pattern is applied. It is also used to provide an alternative to extend functionality with inheritance and object composition. A proxy object is also referred to as a surrogate, handle, or wrapper.</p>
+<p>The proxy pattern comprises the subject interface, the RealSubject class, and the Proxy class:</p>
+<h2 id="representation-of-algorithms">Representation of algorithms</h2>
+<p>A flow chart and pseudo code are methods of representing algorithms. An algorithm shows the logic of how a problem is solved. A flow chart has different representation symbols such as Entry, Exit, Task, Input/Output, Decision Point, and Inter Block. A structured program consists of a series of these symbols to perform a specific task. Pseudo code has documentation, action, and flow control keywords to visualize an algorithm. The documentation keywords are TASK and REM. SET, PUT, and GET are the action keywords.</p>
+<p>The flow control keywords are SET, LOOP, (WHILE, UNTIL), REP, and POST.</p>
+<p>A flow chart has different representation symbols such as Entry, Exit, Task, Input/Output, Decision Point, and Inter Block.</p>
+<h2 id="pseudo-code">Pseudo code</h2>
+<p>Pseudo code is a high-level design of a program or algorithm. Sequence and selection are two constructs used in pseudo code. Pseudo code is easier than a flow chart visualizes the algorithm while pseudo code can be easily modified and updated. Errors in design can be caught very early in pseudo code. This saves the cost of fixing defects later.</p>
+<h2 id="complexity-and-performance-analysis">Complexity and performance analysis</h2>
+<p>The efficiency of an algorithm is measured through various parameters, such as CPU time, memory, disk, and network. The complexity is how the algorithm scales when the number of input parameters increases. Performance is a measure of time, space, memory, and other parameters. Algorithms are compared by their processing time and resource consumption. Complexity measures the parameters and is represented by the Big O notation.</p>
+<h3 id="complexity-analysis-of-algorithms">Complexity analysis of algorithms</h3>
+<p>algorithm is a set of steps to achieve  a task
+the time taken for an algorithm to complete is the number of steps taken.</p>
+<p>computational time grows as a factor of 10</p>
+<h3 id="big-o-notation">Big O notation</h3>
+<p>t(n) time function represents algorithm complexity based on big O notation
+t(n) = o(n) - linear complexity
+logarithmic o(log n) eg binary search in a tree datastructure
+quadratic time (o n2) Bubble sort, selection sort an insertion sort
+big omega and big theta are notation for the upper and lower bounds of the alogorithm
+worst case, best case average case and amortised run-time complexity is used for the analysis of algorithms</p>
+<p>Big O notation also used to determine how much space used by an algorithm
+best and worst scenarios relative to space and time</p>
+<h2 id="linear-complexity">Linear Complexity</h2>
+<p>processing time or storage space directly proportional to the number of input elements to be processed
+0(n)</p>
+<pre tabindex="0"><code>
+func main (){
+    var m [10]int
+    var k int
+    for k=0;k&lt;10;k++{
+        m[k]= k *200
+        fmt.PrintF(&quot;Element [%d] = %d\n&quot;, k, m[k])
+    }
+}
+
+</code></pre><h2 id="quadratic-complexity">Quadratic complexity</h2>
+<p>if the processing time is proportional to the square of the number of input elements
+complexity is 10*10=100 two loops have a max of 10
+quadratic complexity for a mutliplication table of n elements is o(n2)</p>
+<pre tabindex="0"><code>
+func main (){
+    var k,l int
+
+    for k = 1; k &lt;=10; k++{
+        fmt.Println(&quot; Multiplicatipn table&quot;,k)
+        for l=1; l&lt;=10; l++{
+            var x int = l*k
+            fmt.Println(x)
+        }
+    }
+}
+
+
+</code></pre><h2 id="cubic-complexity">Cubic Complexity</h2>
+<p>In the case of cubic complexity, the processing time of an algorithm is proportional to the cube of the input elements. The complexity of the following algorithm is 10<em>10</em>10 = 1,000. The three loops have a maximum of 10. The cubic complexity for a matrix update is O(n3).</p>
+<p>Cubic complexity O(n3) is explained in the following example:</p>
+<pre tabindex="0"><code>func main (){
+    var k,l,m int
+    var arr[10][10][10]int
+    for k = 0; k&lt;10;k++{
+        for l=0;l&lt;10;l++{
+            for m=0;m&lt;10;m++{
+                arr[k][l][m]=1 
+                 fmt.Println(&quot;Element Value&quot;,k,l,m,&quot;is&quot;, arr[k][l][m])
+            }    
+        }
+    }
+}
+
+</code></pre><h2 id="logarithmic-complexity">Logarithmic complexity</h2>
+<p>An algorithm is of logarithmic complexity if the processing time is proportional to the logarithm of the input elements. The logarithm base is typically 2. The following tree is a binary tree with LeftNode and RightNode. The insert operation is of O(log n) complexity, where n is the number of nodes.</p>
+<p>Logarithmic complexity is presented as follows:</p>
+<pre tabindex="0"><code>See tree example 
+</code></pre><h3 id="brute-force-algorithms">Brute force algorithms</h3>
+<p>A brute force algorithm solves a problem based on the statement and the problem definition. Brute force algorithms for search and sort are sequential search and selection sort. Exhaustive search is another brute force algorithm where the solution is in a set of candidate solutions with definitive properties. The space in which the search happens is a state and combinatorial space, which consists of permutations, combinations, or subsets.</p>
+<p>Brute Force algorithms are known for wide applicability and simplicity in solving complex problems. Searching, string matching, and matrix multiplication are some scenarios where they are used. Single computational tasks can be solved using brute force algorithms. They do not provide efficient algorithms. The algorithms are slow and non-performant. Representation of a brute force algorithm is shown in the following code:</p>
+<pre tabindex="0"><code>func findElement(arr[10] int, k int) bool {
+    var i int
+    for i=0; i&lt; 10; i++ {
+        if arr[i]==k {
+            return true
+        }
+    }
+    return false
+}
+// main method
+func main() {
+    var arr = [10]int{1,4,7,8,3,9,2,4,1,8}
+    var check bool = findElement(arr,10)
+    fmt.Println(check)
+    var check2 bool = findElement(arr,9)
+    fmt.Println(check2)
+}
+</code></pre><h2 id="divide-and-conquer-algorithms">Divide and conquer algorithms</h2>
+<p>The approach is to recursively solve the sub-problems and merge the solutions of the sub-problems.
+Recursion, quick sort, binary search, fast Fourier transform, and merge sort are good examples of divide and conquer algorithms. Memory is efficiently used with these algorithms. Performance is sometimes an issue in the case of recursion. On multiprocessor machines, these algorithms can be executed on different processors after breaking them down into sub-problems. A divide and conquer algorithm is shown in the following code:</p>
+<pre tabindex="0"><code>func fibonacci(K int) int{
+    if k&lt;=1{
+        return 1
+    }
+}
+
+func main(){
+    var m int =5
+    for m=0; m&lt;8; m++{
+        var fib = finonacci(m)
+        fmt.printLn(fib)
+    }
+}
+</code></pre><h2 id="backtracking-algorithms">Backtracking algorithms</h2>
+<p>A backtracking algorithm solves a problem by constructing the solution incrementally. Multiple options are evaluated, and the algorithm chooses to go to the next component of the solution through recursion.</p>
+<p>Backtracking is an algorithm that finds candidate solutions and rejects a candidate on the basis of its feasibility and validity. Backtracking is useful in scenarios such as finding a value in an unordered table. It is faster than a brute force algorithm, which rejects a large number of solutions in an iteration. Constraint satisfaction problems such as parsing, rules engine, knapsack problems, and combinatorial optimization are solved using backtracking.</p>
+<p>The following is an example of a backtracking algorithm. The problem is to identify the combinations of elements in an array of 10 elements whose sum is equal to 18. The findElementsWithSum method recursively tries to find the combination. Whenever the sum goes beyond the k target, it backtracks:</p>
+<pre tabindex="0"><code>//main package has examples shown
+// in Hands-On Data Structures and algorithms with Go book
+package main
+// importing fmt package
+import (
+ &quot;fmt&quot;
+)
+//findElementsWithSum of k from arr of size
+
+func findElementsWithSum(arr[10] int,combinations[19] int,size int, k int, addValue int, l int, m int) int {
+var num int = 0
+if addValue &gt; k {
+ return -1
+ }
+if addValue == k {
+ num = num +1
+ var p int =0
+ for p=0; p &lt; m; p++ {
+  fmt.Printf(&quot;%d,&quot;,arr[combinations[p]])
+  }
+ fmt.Println(&quot; &quot;)
+ }
+var i int
+for i=l; i&lt; size; i++ {
+//fmt.Println(&quot; m&quot;, m)
+combinations[m] = l
+findElementsWithSum(arr,combinations,size,k,addValue+arr[i],l,m+1)
+l = l+1
+ }
+ return num
+}
+// main method
+func main() {
+var arr = [10]int{1,4,7,8,3,9,2,4,1,8}
+var addedSum int = 18
+var combinations [19]int
+findElementsWithSum(arr,combinations,10,addedSum,0,0,0)
+//fmt.Println(check)//var check2 bool = findElement(arr,9)
+//fmt.Println(check2)
+}
+
+
+</code></pre><p>This chapter covered the definition of abstract datatypes, classifying data structures into linear, nonlinear, homogeneous, heterogeneous, and dynamic types. Abstract datatypes such as container, list, set, map, graph, stack, and queue were presented in this chapter. The chapter covered the performance analysis of data structures and structural design patterns.</p>
+<p>We looked at the classification of data structures and structural design patterns. You can use algorithms such as brute force, divide and conquer, and backtracking by calculating the complexity and performance analysis. The choice of algorithm and the use of design patterns and data structures are the key takeaways.</p>
+<h2 id="chapter-three">Chapter Three</h2>
+<p>In this chapter, we will discuss the following Go language-specific data structures:</p>
+<p>Arrays
+Slices
+Two-dimensional slices
+Maps
+Database operations
+Variadic functions
+CRUD web forms</p>
+<h2 id="chapter-five---linear-data-structures">Chapter Five - Linear Data Structures</h2>
+<p>Various applications, such as Facebook, Twitter, and Google, use lists and linear data structures. As we have discussed previously, data structures allow us to organize vast swathes of data in a sequential and organized manner, thereby reducing time and effort in working with such data. Lists, stacks, sets, and tuples are some of the commonly used linear data structures.</p>
+<h3 id="lists-1">Lists</h3>
+<p>A list is a collection of ordered elements that are used to store list of items. Unlike array lists, these can expand and shrink dynamically.
+Lists also be used as a base for other data structures, such as stack and queue.</p>
+<ul>
+<li>Linked List
+is a sequence of nodes that have properties and a reference to the next node in the sequence.
+The data structure permits the addition and deletion of components from any node next to another node.
+Linked list will have a set of nodes with integer properties, as follows:</li>
+</ul>
+<pre tabindex="0"><code>//Node class
+
+type Node struct {
+    property int
+    nextNode *Node
+}
+
+// LinkedList class
+type LinkedList struct {
+    headNode *Node
+}
+
+//AddToHead method of LinkedList class
+func (linkedList *LinkedList) AddToHead(property int) {
+    var node = Node{}
+    node.property = property
+    if node.nextNode != nil {
+        node.nextNode = linkedList.headNode
+    }
+    linkedList.headNode = &amp;node
+}
+
+// main method
+func main() {
+    var linkedList LinkedList
+    linkedList = LinkedList{}
+    linkedList.AddToHead(1)
+    linkedList.AddToHead(3)
+    fmt.Println(linkedList.headNode.property)
+}
+
+//IterateList method iterates over LinkedList
+func (linkedList *LinkedList) IterateList() {
+    var node *Node
+    for node = linkedList.headNode; node != nil; node = node.nextNode {
+        fmt.Println(node.property)
+    }
+}
+
+//LastNode method returns the last Node
+func (linkedList *LinkedList) LastNode() *Node{
+ var node *Node
+ var lastNode *Node
+ for node = linkedList.headNode; node != nil; node = node.nextNode {
+ if node.nextNode ==nil {
+ lastNode = node
+ }
+ }
+ return lastNode
+}
+
+//AddToEnd method adds the node with property to the end
+
+func (linkedList *LinkedList) AddToEnd(property int) {
+ var node = &amp;Node{}
+ node.property = property
+ node.nextNode = nil
+ var lastNode *Node
+ lastNode = linkedList.LastNode()
+ if lastNode != nil {
+ lastNode.nextNode = node
+ }
+}
+
+//NodeWithValue method returns Node given parameter property
+
+func (linkedList *LinkedList) NodeWithValue(property int) *Node{
+ var node *Node
+ var nodeWith *Node
+ for node = linkedList.headNode; node != nil; node = node.nextNode {
+ if node.property == property {
+ nodeWith = node
+ break;
+ }
+ }
+ return nodeWith
+}
+
+//AddAfter method adds a node with nodeProperty after node with property
+
+func (linkedList *LinkedList) AddAfter(nodeProperty int,property int) {
+ var node = &amp;Node{}
+ node.property = property
+ node.nextNode = nil
+ var nodeWith *Node
+ nodeWith = linkedList.NodeWithValue(nodeProperty)
+ if nodeWith != nil {
+ node.nextNode = nodeWith.nextNode
+ nodeWith.nextNode = node
+ }
+}
+
+// main method
+func main() {
+    var linkedList LinkedList
+    linkedList = LinkedList{}
+    linkedList.AddToHead(1)
+    linkedList.AddToHead(3)
+    linkedList.AddToEnd(5)
+    linkedList.AddAfter(1,7)
+    linkedList.IterateList()
+}
+
+</code></pre><ul>
+<li>Doubly Linked List
+In a doubly linked list, all nodes have a pointer to the node they are connected to, on either side of them, in the list.
+This means that each node is connected to two nodes, and we can traverse forward through to the next node or backward through to the previous node.
+Doubly linked lists allow insertion, deletion and, obviously, traversing operations.</li>
+</ul>
+<pre tabindex="0"><code>// Node class
+type Node struct {
+    property int
+    nextNode *Node
+    previousNode *Node
+}
+
+//NodeBetweenValues method of LinkedList
+func (linkedList *LinkedList) NodeBetweenValues(firstProperty int,secondProperty int) *Node{
+    var node *Node
+    var nodeWith *Node
+    for node = linkedList.headNode; node != nil; node = node.nextNode {
+        if node.previousNode != nil &amp;&amp; node.nextNode != nil {
+            if node.previousNode.property == firstProperty &amp;&amp; node.nextNode.property ==    
+            secondProperty{
+               nodeWith = node
+               break;
+            }
+        }
+    }
+    return nodeWith
+}
+
+//AddToHead method of LinkedList
+func (linkedList *LinkedList) AddToHead(property int) {
+ var node = &amp;Node{}
+ node.property = property
+ node.nextNode = nil
+ if linkedList.headNode != nil {
+ node.nextNode = linkedList.headNode
+ linkedList.headNode.previousNode = node
+ }
+ linkedList.headNode = node
+}
+
+//AddAfter method of LinkedList
+func (linkedList *LinkedList) AddAfter(nodeProperty int,property int) {
+ var node = &amp;Node{}
+ node.property = property
+ node.nextNode = nil
+ var nodeWith *Node
+ nodeWith = linkedList.NodeWithValue(nodeProperty)
+ if nodeWith != nil {
+ 
+ node.nextNode = nodeWith.nextNode
+ node.previousNode = nodeWith
+ nodeWith.nextNode = node
+ }
+}
+
+//AddToEnd method of LinkedList
+func (linkedList *LinkedList) AddToEnd(property int) {
+ var node = &amp;Node{}
+ node.property = property
+ node.nextNode = nil
+ var lastNode *Node
+ lastNode = linkedList.LastNode()
+ if lastNode != nil {
+ 
+ lastNode.nextNode = node
+ node.previousNode = lastNode
+ }
+}
+
+// main method
+func main() {
+ var linkedList LinkedList
+ linkedList = LinkedList{}
+ linkedList.AddToHead(1)
+ linkedList.AddToHead(3) linkedList.AddToEnd(5)
+ linkedList.AddAfter(1,7)
+ fmt.Println(linkedList.headNode.property)
+ var node *Node
+ node = linkedList.NodeBetweenValues(1,5)
+ fmt.Println(node.property)
+}
+
+</code></pre><h3 id="sets">Sets</h3>
+<p>A Set is a linear data structure that has a collection of values that are not repeated. A set can store unique values without any particular order.
+Dynamic and mutable sets allow for the insertion and deletion of elements.
+Algebraic operations such as union, intersection, difference, and subset can be defined on the sets.
+The following example shows the Set integer with a map integer key and bool as a value:</p>
+<pre tabindex="0"><code>package main
+// importing fmt package
+import (
+ &quot;fmt&quot;
+)
+//Set class
+type Set struct {
+ integerMap map[int]bool
+}
+
+//create the map of integer and bool
+func (set *Set) New(){
+ set.integerMap = make(map[int]bool)
+}
+
+// adds the element to the set
+func (set *Set) AddElement(element int){
+ if !set.ContainsElement(element) {
+  set.integerMap[element] = true
+ }
+}
+
+
+
+</code></pre><h3 id="tuples-1">Tuples</h3>
+<p>Tuples are finite ordered sequences of objects. They can contain a mixture of other data types and are used to group related data into a data structure. In a relational database, a tuple is a row of a table. Tuples have a fixed size compared to lists, and are also faster. A finite set of tuples in the relational database is referred to as a relation instance. A tuple can be assigned in a single statement, which is useful for swapping values. Lists usually contain values of the same data type, while tuples contain different data.</p>
+<h3 id="queues">Queues</h3>
+<p>A queue consists of elements to be processed in a particular order or based on priority. A priority-based queue of orders is shown in the following code, structured as a heap. Operations such as enqueue, dequeue, and peek can be performed on queue. A queue is a linear data structure and a sequential collection. Elements are added to the end and are removed from the start of the collection. Queues are commonly used for storing tasks that need to be done, or incoming HTTP requests that need to be processed by a server. In real life, handling interruptions in real-time systems, call handling, and CPU task scheduling are good examples for using queues.</p>
+<p>//new //add method order parameter added to queue.</p>
+<p>Synchronized queue
+A synchronized queue consists of elements that need to be processed in a particular sequence. Passenger queue and ticket processing queues are types of synchronized queues.</p>
+<h3 id="stacks">Stacks</h3>
+<p>A stack is a last in, first out structure in which items are added from the top. Stacks are used in parsers for solving maze algorithms. Push, pop, top, and get size are the typical operations that are allowed on stack data structures. Syntax parsing, backtracking, and compiling time memory management are some real-life scenarios where stacks can be used. An example of stack implementation is as follows (stack.go):</p>
+<h2 id="chapter-6">Chapter 6</h2>
+<p>Non Linear Data Structures
+Non-linear data structures are used in cryptography and other areas. A non-linear data structure is an arrangement in which an element is connected to many elements. These structures use memory quickly and efficiently. Free contiguous memory is not required for adding new elements.</p>
+<p>The length of the data structures is not important before adding new elements. A non-linear data structure has multiple levels and a linear one has a single level. The values of the elements are not organized in a non-linear data structure. The data elements in a non-linear data structure cannot be iterated in one step. The implementation of these data structures is complicated.</p>
+<p>Tree types such as binary search trees, treaps, and symbol tables are explained in this chapter.</p>
+<p>This chapter covers the following non-linear data structures:</p>
+<p>Trees
+Tables
+Containers
+Hash functions</p>
+<h2 id="trees">Trees</h2>
+<p>A tree is a non-linear data structure. Trees are used for search and other use cases. A binary tree has nodes that have a maximum of two children. A binary search tree consists of nodes where the property values of the left node are less than the property values of the right node. The root node is at level zero of a tree. Each child node could be a leaf.</p>
+<h3 id="binary-search-tree">Binary Search Tree</h3>
+<p>A binary search tree is a data structure that allows for the quick lookup, addition, and removal of elements. It stores the keys in a sorted order to enable a faster lookup. This data structure was invented by P. F. Windley, A. D. Booth, A. J. T. Colin, and T. N. Hibbard. On average, space usage for a binary search tree is of the order O(n), whereas the insert, search, and delete operations are of the order O(log n). A binary search tree consists of nodes with properties or attributes:</p>
+<p>key integer
+value integer
+leftnode and right node instances of the treenode</p>
+<h3 id="avl-tree">AVL Tree</h3>
+<p>height adjusting binary search trees
+The balance factor is obtained by finding the difference between the heights of the left and right sub-trees. Balancing is done using rotation techniques. If the balance factor is greater than one, rotation shifts the nodes to the opposite of the left or right sub-trees. The search, addition, and deletion operations are processed in the order of O(log n).</p>
+<h3 id="b-tree">B+ Tree</h3>
+<h3 id="b--tree">B- Tree</h3>
+<h3 id="t-tree">T-Tree</h3>
+<h3 id="tables">Tables</h3>
+<p>A table class has an array of rows and column names</p>
+<h3 id="symbol-tables">Symbol Tables</h3>
+<p>A symbol table is present in memory during the program translation process. It can be present in program binaries. A symbol table contains the symbol&rsquo;s name, location, and address. In Go, the gosym package implements access to the Go symbol and line number tables. Go binaries generated by the GC compilers have the symbol and line number tables. A line table is a data structure that maps program counters to line numbers.</p>
+<h3 id="containers">Containers</h3>
+<p>The containers package provides access to the heap, list, and ring functionalities in Go. Containers are used in social networks, knowledge graphs, and other areas. Containers are lists, maps, slices, channels, heaps, queues, and treaps.</p>
+<h3 id="ring-is-a-circular-linked-list">Ring is a circular linked list</h3>
+<p>container ring</p>
+<h3 id="hash-functions">Hash functions</h3>
+<p>Hash functions are used in cryptography and other areas. These data structures are presented with code examples related to cryptography. There are two ways to implement a hash function in Go: with crc32 or sha256. Marshaling (changing the string to an encoded form) saves the internal state, which is used for other purposes later. A BinaryMarshaler (converting the string into binary form) example is explained in this section:</p>
+<h2 id="chapter-7">Chapter 7</h2>
+<h3 id="homogenous-data-structures">Homogenous Data Structures</h3>
+<p>-simular types of data</p>
+<ul>
+<li>Two-dimensional arrays</li>
+<li>Multi-dimensional arrays</li>
+</ul>
+<p>Matrix representation
+Multiplication
+Addition
+Subtraction
+Determinant calculation
+Inversion
+Transposition</p>
+<h2 id="chapter-8">Chapter 8</h2>
+<h3 id="hetrogeneous-data-structures">Hetrogeneous data structures</h3>
+<p>Hetrogeneous data structures contain diverse types of data such as integers, doubles and floats
+linked lists and ordered lists used for memory management
+linked list is a chain of elements that are associated together by means of pointers
+memory utilised can be allocated dynamically dont have to take a block of memory</p>
+<p>linked lists
+ordered lists
+unorderered lists</p>
+<p>singly linked list dynamic data structure in which additional and removal operations are easy
+random retrieval not possible as youll have to travers the list of nodes for a positioned node</p>
+<p>doubly linked list
+data structure that consisits of nodes that have links to previous and next nodes
+circular linked lists last node connected to the first</p>
+<p>Ordered list: By creating a group of methods for the slice data type and calling sort</p>
+<p>Unordered list: The other way is to invoke sort.Slice with a custom less function
+sort by factor
+mulitsorter</p>
+<p>unordered list
+relative positions in contiguous memory do not need to be maintained</p>
+<h2 id="chapter-9">Chapter 9</h2>
+<h3 id="dynamic-data-structures">Dynamic Data Structures</h3>
+<pre tabindex="0"><code>A dynamic data structure is a set of elements in memory that has the adaptability to expand or shrink. This ability empowers a software engineer to control precisely how much memory is used. Dynamic data structures are used for handling generic data in a key-value store. They can be used in distributed caching and storage management. Dynamic data structures are valuable in many circumstances in which dynamic addition or deletion of elements occur. They are comparable in capacity to a smaller relational database or an in-memory database. These data structures are used in marketing and customer relationship management applications. Dictionaries, TreeSets, and sequences are examples of dynamic data structures.
+</code></pre><h3 id="dictionaries">Dictionaries</h3>
+<p>Collection of Unique Key Value Pairs
+Distributed Caching
+In Memory Databases
+Keys can be any type
+can have duplicate values
+add, remove and lookup operations</p>
+<pre tabindex="0"><code>
+type DictVal string 
+
+type Dictionary Struct{
+    elements map[DictKey]DictVal
+    lock sync.RWMutex
+}
+
+// Put method
+func (dict *Dictionary) Put(key DictKey, value DictVal) {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    if dict.elements == nil {
+        dict.elements = make(map[DictKey]DictVal)
+    }
+    dict.elements[key] = value
+}
+
+// Remove method
+func (dict *Dictionary) Remove(key DictKey) bool {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    var exists bool
+    _, exists = dict.elements[key]
+    if exists {
+        delete(dict.elements, key)
+    }
+    return exists
+}
+
+// Contains method
+func (dict *Dictionary) Contains(key DictKey) bool {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var exists bool
+    _, exists = dict.elements[key]
+    return exists
+}
+
+// Find method
+func (dict *Dictionary) Find(key DictKey) DictVal {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    return dict.elements[key]
+}
+
+// Reset method
+func (dict *Dictionary) Reset() {
+    dict.lock.Lock()
+    defer dict.lock.Unlock()
+    dict.elements = make(map[DictKey]DictVal)
+}
+
+// NumberOfElements method
+func (dict *Dictionary) NumberOfElements() int {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    return len(dict.elements)
+}
+
+// GetKeys method
+func (dict *Dictionary) GetKeys() []DictKey {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var dictKeys []DictKey
+    dictKeys = []DictKey{}
+    var key DictKey
+    for key = range dict.elements {
+        dictKeys = append(dictKeys, key)
+    }
+    return dictKeys
+}
+
+// GetValues method 
+func (dict *Dictionary) GetValues() []DictVal {
+    dict.lock.RLock()
+    defer dict.lock.RUnlock()
+    var dictValues []DictVal
+    dictValues = []DictVal{}
+    var key DictKey
+    for key = range dict.elements {
+        dictValues = append(dictValues, dict.elements[key])
+    }
+    return dictValues
+}
+
+// main method
+func main() {
+  var dict *Dictionary = &amp;Dictionary{}
+  dict.Put(&quot;1&quot;,&quot;1&quot;)
+  dict.Put(&quot;2&quot;,&quot;2&quot;)
+  dict.Put(&quot;3&quot;,&quot;3&quot;)
+  dict.Put(&quot;4&quot;,&quot;4&quot;)
+  fmt.Println(dict)
+}
+
+</code></pre><h3 id="treesets">TreeSets</h3>
+<p>TreeSets are used in marketing and customer relationship management applications.
+TreeSet is a set that has a binary tree with unique elements.
+The elements are sorted in a natural order.
+In the following code snippet, TreeSet creation, insertion, search, and stringify operations are presented.
+TreeSet allows only one null value if the set is empty.
+The elements are sorted and stored as elements.
+The add, remove, and contains functions cost log(n) on TreeSets:</p>
+<pre tabindex="0"><code>package main
+
+// TreeSet class
+type TreeSet struct {
+  bst *BinarySearchTree
+}
+
+Insert TreeNode Method
+
+// InsertTreeNode method
+func (treeset *TreeSet) InsertTreeNode(treeNodes ...TreeNode) {
+  var treeNode TreeNode
+  for _, treeNode = range treeNodes {
+    treeset.bst.InsertElement(treeNode.key, treeNode.value)
+  }
+}
+//Delete Method
+//inOrderTraverseTree Method - Traverses from the leftto the root and the to the right
+//preorderTraverseTree Method - method traverses the tree from the root, to the left and right of the tree. The preOrderTraverseTree method takes treeNode and function as parameters. If treeNode is not nil, function is invoked with the value of treeNode, and the preOrderTraverseTree method is invoked with function and leftNode and rightNode as parameters
+//search method -The Search method of the TreeSet class takes a variable argument named treeNodes of the TreeNode type and returns true if one of those treeNodes exists; otherwise, it returns false. The code following snippet outlines the Search method:
+string method contains a string version of bst.
+
+
+Synchronized TreeSets
+Operations that are performed on synchronized TreeSets are synchronized across multiple calls that access the elements of TreeSets. Synchronization in TreeSets is achieved using a sync.RWMutex lock. The lock method on the tree's lock instance is invoked, and the unlock method is deferred before the tree nodes are inserted, deleted, or updated:
+
+
+Mutable TreeSets
+Mutable TreeSets can use add, update, and delete operations on the tree and its nodes. insertTreeNode updates the tree by taking the rootNode and treeNode parameters to be updated. The following code snippet shows how to insert a TreeNode with a given rootNode and TreeNode:
+
+reeset.bst
+The TreeNode's can be updated by accessing treeset.bst and traversing the binary search tree from the rootNode and the left and right nodes of rootNode, as shown here:
+
+
+  var treeset *TreeSet = &amp;TreeSet{}
+  treeset.bst = &amp;BinarySearchTree{} 
+  var node1 TreeNode = TreeNode{8, 8, nil, nil}
+  var node2 TreeNode = TreeNode{3, 3, nil, nil}
+  var node3 TreeNode = TreeNode{10, 10, nil, nil}
+  var node4 TreeNode = TreeNode{1, 1, nil, nil}
+  var node5 TreeNode = TreeNode{6, 6, nil, nil}
+  treeset.InsertTreeNode(node1, node2, node3, node4, node5)
+  treeset.String()
+
+Sequences
+A sequence is a set of numbers that are grouped in a particular order. The number of elements in the stream can be infinite, and these sequences are called streams. A subsequence is a sequence that's created from another sequence. The relative positions of the elements in a subsequence will remain the same after deleting some of the elements in a sequence.
+
+In the following sections, we will take a look at different sequences such as the Farey sequence, Fibonacci sequence, look-and-say, and Thue–Morse.
+
+Farey sequence
+A Farey sequence consists of reduced fractions with values between zero and one. The denominators of the fractions are less than or equal to m, and organized in ascending order. This sequence is called a Farey series. In the following code, reduced fractions are displayed:
+
+Fibonacci sequence
+The Fibonacci sequence consists of a list of numbers in which every number is the sum of the two preceding numbers. Pingala, in 200 BC, was the first to come up with Fibonacci numbers. The Fibonacci sequence is as follows:
+
+Look-and-say
+The look-and-say sequence is a sequence of integers:
+
+The sequence is generated by counting the digits of the previous number in the group. John Conway initially coined the term look-and-say sequence.
+
+The look-and-say sequence is shown in the following code. The look_say method takes a string as a parameter and returns a look-and-say sequence of integers:
+
+The Thue–Morse sequence is a binary sequence starting at zero that appends the Boolean complement of the current sequence.
+
+The Thue–Morse sequence is as follows:
+
+
+The Thue–Morse sequence was applied by Eugene Prophet and used by Axel Thue in the study of combinatorics on words. The Thue–Morse sequence is used in the area of fractal curves, such as Koch snowflakes.
+
+The following code snippet creates the Thue–Morse sequence. The ThueMorseSequence function takes a bytes.Buffer instance buffer and modifies the buffer to the Thue–Morse sequence by applying the complement operation on the bytes:
+
+
+## Classic Algorithms
+
+Canonicalize Data and create readable content 
+Sorting - asc/ desc arrangement 
+Searching - find element in the set
+Recursing - calls itself with input elements 
+Hashing - cryptographic hash technique - maps data with a subject size to a hash with a seettled size, single direction and you cannot alter 
+
+### Sorting Algorithms
+
+best soritng algorithm time is O(n log n)
+
+Sorting algorithms classified by 
+Computational Complexity
+Memory Usage 
+Stability
+Types of Sorting: serial or parallell
+Adaptability
+Method of Sorting
+
+
+Bubble - compares neighbouring elements and swaps them if they are in wrong order
+O(n2) where n is the nof of elements sorted
+smallest or greatest value bubbles up to the top of the collection
+depending on whether you are sorting in asc or desc order
+
+
+## Selectiom Sort 
+
+Divides the input collection into two fragments 
+subset of elements is sorted by swapping the smallest or leargets elemnt from the left of the lis to the right 
+on2
+ineffcient for large collections  perfoms worse than the insertion sort algo rithm.
+
+
+## Insertion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/go_style_notes/"
+      ><span class="mr-1.5">←</span><span>Go Style Guide</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/design_principles/"
+      ><span>Design Principles</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2025
+    <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

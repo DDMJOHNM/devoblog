@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Database Design - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="Entity Relationship Models DBMS
+ data information knowledge intelligence (value of data)  From data to actionable insights
+File System Solution
+ Separated, isolated data and data duplication Dependancy on applications Incompatible files Lack of data sharing  Database Solution
+ A structure that contains data Organise data through entities, attributes, relationships Collection of programs that users interact with a database.  Popular DBMS
+ Microsoft Access MySql Progres MongoDb (NoSql)  Advantages" />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://devblog-2u3g.onrender.com/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/github.svg" />
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://devblog-2u3g.onrender.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.91.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Database Design" />
+<meta property="og:description" content="Entity Relationship Models DBMS
+ data information knowledge intelligence (value of data)  From data to actionable insights
+File System Solution
+ Separated, isolated data and data duplication Dependancy on applications Incompatible files Lack of data sharing  Database Solution
+ A structure that contains data Organise data through entities, attributes, relationships Collection of programs that users interact with a database.  Popular DBMS
+ Microsoft Access MySql Progres MongoDb (NoSql)  Advantages" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/archive/database_design/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
+<meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
+
+
+  
+  <meta itemprop="name" content="Database Design">
+<meta itemprop="description" content="Entity Relationship Models DBMS
+ data information knowledge intelligence (value of data)  From data to actionable insights
+File System Solution
+ Separated, isolated data and data duplication Dependancy on applications Incompatible files Lack of data sharing  Database Solution
+ A structure that contains data Organise data through entities, attributes, relationships Collection of programs that users interact with a database.  Popular DBMS
+ Microsoft Access MySql Progres MongoDb (NoSql)  Advantages"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
+<meta itemprop="wordCount" content="828">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Database Design"/>
+<meta name="twitter:description" content="Entity Relationship Models DBMS
+ data information knowledge intelligence (value of data)  From data to actionable insights
+File System Solution
+ Separated, isolated data and data duplication Dependancy on applications Incompatible files Lack of data sharing  Database Solution
+ A structure that contains data Organise data through entities, attributes, relationships Collection of programs that users interact with a database.  Popular DBMS
+ Microsoft Access MySql Progres MongoDb (NoSql)  Advantages"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://devblog-2u3g.onrender.com"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/DDMJOHNM"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/john-mason-08698bb1"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Database Design</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Nov 13, 2022</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="entity-relationship-models">Entity Relationship Models</h2>
+<p>DBMS</p>
+<ul>
+<li>data</li>
+<li>information</li>
+<li>knowledge</li>
+<li>intelligence (value of data)</li>
+</ul>
+<p>From data to actionable insights</p>
+<p>File System Solution</p>
+<ul>
+<li>Separated, isolated data and data duplication</li>
+<li>Dependancy on applications</li>
+<li>Incompatible files</li>
+<li>Lack of data sharing</li>
+</ul>
+<p>Database Solution</p>
+<ul>
+<li>A structure that contains data</li>
+<li>Organise data through entities, attributes, relationships</li>
+<li>Collection of programs that users interact with a database.</li>
+</ul>
+<p>Popular DBMS</p>
+<ul>
+<li>Microsoft Access</li>
+<li>MySql</li>
+<li>Progres</li>
+<li>MongoDb (NoSql)</li>
+</ul>
+<p>Advantages</p>
+<ul>
+<li>more information from same amount of data</li>
+<li>share our data</li>
+<li>balancing conflicting requirements</li>
+<li>controlling redundacy</li>
+<li>consistency</li>
+<li>Referential integrity</li>
+<li>expanding security</li>
+<li>increasing productivity</li>
+<li>providing data independence.</li>
+</ul>
+<p>Disaadvantages</p>
+<ul>
+<li>Complex</li>
+<li>Greater Impact of Failure</li>
+<li>More differcult recovery</li>
+<li>Larger file size (Also structure, user and application)</li>
+</ul>
+<p>When is a DBMS not appropriate - when advantages outweigh disadvantages</p>
+<ul>
+<li>Database small with simple structure</li>
+<li>Applications are simple and relatively static</li>
+<li>Applications have real time requirements</li>
+<li>Concurrent, multi access to data not required</li>
+</ul>
+<p>Contents of a DBMS</p>
+<p>User Data</p>
+<ul>
+<li>tables, relationships</li>
+<li>columns or row db structure</li>
+</ul>
+<p>Meta Data</p>
+<ul>
+<li>How to Describe the data</li>
+<li>System Tables</li>
+<li>Indexes access records without going through entire table</li>
+</ul>
+<p>Applications Metadata</p>
+<ul>
+<li>Storage facility for forms</li>
+</ul>
+<p>Design a Relational Database Model
+Entity relationship model
+Describes</p>
+<ul>
+<li>Entities : class group abstract structure and no value (Object of Interest)</li>
+<li>Attributes (Identifier) : Characteristics of an entity of interest</li>
+<li>Relationships among these entities : Instance - Object with values</li>
+<li>Identifiers : special attribute used to identify a specific instance of an entity - artificial or natural (Created)</li>
+</ul>
+<p>Relationship between two or more entities
+eg employees and companies
+Domain knowledge consider answer in context
+employee multiple companies
+degree of relations how many enities involved in the relationship</p>
+<ul>
+<li>Unary or Recursive - (1)</li>
+<li>Binary (2) - relational db cannot handle</li>
+</ul>
+<p>Cardinality - number of instances involved in the relationship (max cardinality or multiplicity)</p>
+<ul>
+<li>1:n One to many</li>
+<li>N:1 Many to one</li>
+<li>N:M Many to many</li>
+</ul>
+<p>Participation - Manditory or Optional (Optionality or Minimal Cardinatilty)
+or require instance of entity here also there</p>
+<p>Entity Relationship Models</p>
+<p>Based on your understanding so far, what are the entities, attributes, identifiers, and relationships in the Entity Relationship Model? You can lay out the initial outline here, and the owner will meet with you to answer your questions.</p>
+<figure><img src="/images/dbcourse1.jpg"/><figcaption>
+            <h4>Entity RelationShip Model Pizza Franchise</h4>
+        </figcaption>
+</figure>
+
+<p>Entity Relationship Diagram and Notation</p>
+<p>(Above from Coursera course)</p>
+<p><a href="https://www.mongodb.com/compare/relational-vs-non-relational-databases">https://www.mongodb.com/compare/relational-vs-non-relational-databases</a></p>
+<h2 id="relational-versus-nosql">Relational versus NoSql</h2>
+<h1 id="rdms">Rdms</h1>
+<p>-Relationships between table (Relational Database)</p>
+<h2 id="advantages">Advantages</h2>
+<h3 id="acid-compliant">Acid Compliant</h3>
+<p>-Atomicity (All or nothing Update) , Consistency and Durability - standard that guarantees the reliability of Database transactions.</p>
+<h3 id="data-accurracy">Data Accurracy</h3>
+<p>primary and foreign keys ensure no duplication</p>
+<h3 id="nomalization">Nomalization</h3>
+<p>Ensuring data is organized in such a way that data anomalies are reduced or eliminated also reduces storage cost</p>
+<h3 id="simplicity">Simplicity</h3>
+<p>English like syntax of sql</p>
+<h2 id="disadvantages">Disadvantages</h2>
+<h3 id="scalability">Scalability</h3>
+<ul>
+<li>Vertical Scaling improve hardware in the machine.</li>
+</ul>
+<h3 id="flexibility">Flexibility</h3>
+<ul>
+<li>Schema is rigid for relational DB</li>
+</ul>
+<h3 id="performance">Performance</h3>
+<ul>
+<li>tightly linked to the complexity of tables and number
+as well amount of data in each table.</li>
+</ul>
+<h2 id="non-relational-database-or-nosql">Non Relational Database or noSQL</h2>
+<ul>
+<li>Any db that doesnt use tables great for the cloud horizontal scaling involved (Distributed across servers)</li>
+</ul>
+<h3 id="document-databases">Document Databases</h3>
+<p>Documents individual units
+Json like structures that support datatypes.
+db.product.find({&quot;_id&quot;: 23}, {productName: 1, price: 1})
+filter collections of data
+eg mongo DB</p>
+<h3 id="key-value-database">Key Value Database</h3>
+<p>Data accessed from keys simplicity</p>
+<h3 id="graph-databases">Graph Databases</h3>
+<p>Most specialised for of non relational db
+they are flexible because new nodes and edges can easily be added.
+not good at querying the whole as relation arent well defined.</p>
+<h2 id="wide-columns-databases">Wide Columns Databases</h2>
+<p>Considered two dimensional key value stores.</p>
+<h1 id="when-to-use-a-relational-database">When to use a relational Database</h1>
+<ul>
+<li>Project where data is predictable, structure, size and frequency.</li>
+<li>Nomalization can help reduce the size of data on the disk and limiting duplicate data.</li>
+<li>Are the best choice if relationships between enitites are important</li>
+<li>large dataset with a complex structure.</li>
+</ul>
+<h1 id="when-to-use-a-non-relational-database">When to use a non-relational database</h1>
+<ul>
+<li>it your data needs to be flexible given size and shape and be open in the future</li>
+<li>Cloud and scaling</li>
+</ul>
+<pre tabindex="0"><code>Non-relational databases are suitable for both operational and transactional data.
+They are more suitable for unstructured big data.
+Non-relational databases offer higher performance and availability.
+Flexible schema help non-relational databases store more data of varied types that can be changed without major schema changes.
+</code></pre><h2 id="relational-models">Relational Models</h2>
+<h1 id="normalization">Normalization</h1>
+<h2 id="normal-forms">NORMAL FORMS</h2>
+<p>organise data efficiently in db
+guidelines</p>
+<ul>
+<li>avoid data redundancy</li>
+<li>data logically stored</li>
+</ul>
+<h3 id="1nf">1nf</h3>
+<p>table db or schema
+1 - only atomic values
+2 - No repeating groups
+3 - each table must have a unique primary key</p>
+<h3 id="2nf">2nf</h3>
+<p>1 - in the first normal form
+2 - no partial dependancies
+composite keys</p>
+<h3 id="3nf">3nf</h3>
+<p>1 - 2nf
+2 - all non pk fields  are dependant on the pk</p>
+<h2 id="denormalization">Denormalization</h2>
+<p>used on previously normalised databases to increase perfomance
+adding redundant copies of data or by grouping data
+often motivated by scalability or performance in relational databses
+needinf to carry out very large numbers of read operations.
+only decognised on a data model otherwised normalised.</p>
+<p>eg join operatons on a normalised design may be prohibitively slow</p>
+<ul>
+<li>sql indexed views</li>
+<li>optimise query response</li>
+</ul>
+<p>denormalise logical data design
+so it doesnt become inconsistant
+using constarints</p>
+</section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    <a
+      class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/go_style_notes/"
+      ><span class="mr-1.5">←</span><span>Go Style Guide</span></a
+    >
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/design_principles/"
+      ><span>Design Principles</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2025
+    <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>

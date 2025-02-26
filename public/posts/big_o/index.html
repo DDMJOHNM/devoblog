@@ -53,7 +53,7 @@
   />
 
   
-  <title>Design Principles - Devblog</title>
+  <title>Big O Notation - Devblog</title>
 
   
   <meta name="theme-color" />
@@ -61,12 +61,14 @@
   
   
   
-  <meta name="description" content="Low Level Design
-Responsibility Assignment
-Dependancy Management
-Solid Single Responsibility Principle One class should have one and only one resposibility
-eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
-type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it" />
+  <meta name="description" content="Big O is a way to categorize your algorithms time or memory requirements based on input.
+Generalize growth of an algorithm.
+O(n) - algorithm with grow linerily based on input.
+Make decisions about what datastructures and algorithms to use.
+Knowing how they perform can help greatly mking the best possible program.
+As your input grows how fast does your computation or memory grow.
+Growth is with respect to input.
+ Simplest trick for complexity look for loops." />
   <meta name="author" content="John Mason" />
   
 
@@ -141,39 +143,45 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
   
   
   
-  <meta property="og:title" content="Design Principles" />
-<meta property="og:description" content="Low Level Design
-Responsibility Assignment
-Dependancy Management
-Solid Single Responsibility Principle One class should have one and only one resposibility
-eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
-type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it" />
+  <meta property="og:title" content="Big O Notation" />
+<meta property="og:description" content="Big O is a way to categorize your algorithms time or memory requirements based on input.
+Generalize growth of an algorithm.
+O(n) - algorithm with grow linerily based on input.
+Make decisions about what datastructures and algorithms to use.
+Knowing how they perform can help greatly mking the best possible program.
+As your input grows how fast does your computation or memory grow.
+Growth is with respect to input.
+ Simplest trick for complexity look for loops." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/design_principles/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-11-13T16:56:59+13:00" />
-<meta property="article:modified_time" content="2022-11-13T16:56:59+13:00" />
+<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/big_o/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-12-13T16:56:59+13:00" />
+<meta property="article:modified_time" content="2024-12-13T16:56:59+13:00" />
 
 
   
-  <meta itemprop="name" content="Design Principles">
-<meta itemprop="description" content="Low Level Design
-Responsibility Assignment
-Dependancy Management
-Solid Single Responsibility Principle One class should have one and only one resposibility
-eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
-type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it"><meta itemprop="datePublished" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="dateModified" content="2022-11-13T16:56:59+13:00" />
-<meta itemprop="wordCount" content="308">
+  <meta itemprop="name" content="Big O Notation">
+<meta itemprop="description" content="Big O is a way to categorize your algorithms time or memory requirements based on input.
+Generalize growth of an algorithm.
+O(n) - algorithm with grow linerily based on input.
+Make decisions about what datastructures and algorithms to use.
+Knowing how they perform can help greatly mking the best possible program.
+As your input grows how fast does your computation or memory grow.
+Growth is with respect to input.
+ Simplest trick for complexity look for loops."><meta itemprop="datePublished" content="2024-12-13T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2024-12-13T16:56:59+13:00" />
+<meta itemprop="wordCount" content="459">
 <meta itemprop="keywords" content="" />
   
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Design Principles"/>
-<meta name="twitter:description" content="Low Level Design
-Responsibility Assignment
-Dependancy Management
-Solid Single Responsibility Principle One class should have one and only one resposibility
-eg build a hierarchy of base and derived classes eg reservation interface client code does not care about the type of reservation extraneous coupling is not introduced
-type Reservation interface { GetReservationDate() string CalculateCancellationFee() float64 ***** Cancel() GetCustomerDetails() []Customer GetSellerDetails() Seller } Open/Closed Principle You should be able to extend a classes behavior without modifying it"/>
+<meta name="twitter:title" content="Big O Notation"/>
+<meta name="twitter:description" content="Big O is a way to categorize your algorithms time or memory requirements based on input.
+Generalize growth of an algorithm.
+O(n) - algorithm with grow linerily based on input.
+Make decisions about what datastructures and algorithms to use.
+Knowing how they perform can help greatly mking the best possible program.
+As your input grows how fast does your computation or memory grow.
+Growth is with respect to input.
+ Simplest trick for complexity look for loops."/>
 
   
   
@@ -288,12 +296,12 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
 
 <article>
   <header class="mb-16">
-    <h1 class="!my-0 pb-2.5">Design Principles</h1>
+    <h1 class="!my-0 pb-2.5">Big O Notation</h1>
 
     
     <div class="text-sm antialiased opacity-60">
       
-      <time>Nov 13, 2022</time>
+      <time>Dec 13, 2024</time>
       
       
       
@@ -302,69 +310,115 @@ type Reservation interface { GetReservationDate() string CalculateCancellationFe
     
   </header>
 
-  <section><p>Low Level Design</p>
-<p>Responsibility Assignment</p>
-<p>Dependancy Management</p>
-<h1 id="solid">Solid</h1>
-<h2 id="single-responsibility-principle">Single Responsibility Principle</h2>
-<p>One class should have one and only one resposibility</p>
-<p>eg build a hierarchy of base and derived classes
-eg reservation interface
-client code does not care about the type of reservation extraneous coupling is not introduced</p>
-<pre tabindex="0"><code>type Reservation interface {
-    GetReservationDate() string
-    CalculateCancellationFee() float64  ***** 
-    Cancel()
-    GetCustomerDetails() []Customer
-    GetSellerDetails() Seller
-}
-</code></pre><h2 id="openclosed-principle">Open/Closed Principle</h2>
-<p>You should be able to extend a classes behavior without modifying it</p>
-<p>It should be possible to extend or override class behavior without having to modify code.</p>
-<p>model trips with a repository of reservations
-calculateCancellationFee
-for each type of reservation.</p>
-<pre tabindex="0"><code>type Trip struct {
-    reservations []Reservation
-}
+  <section><p>Big O is a way to categorize your algorithms time or memory requirements based on input.</p>
+<p>Generalize growth of an algorithm.</p>
+<p>O(n) - algorithm with grow linerily based on input.</p>
+<p>Make decisions about what datastructures and algorithms to use.</p>
+<p>Knowing how they perform can help greatly mking the best possible program.</p>
+<p>As your input grows how fast does your computation or memory grow.</p>
+<p>Growth is with respect to input.</p>
+<ol>
+<li>Simplest trick for complexity look for loops.</li>
+</ol>
+<pre tabindex="0"><code>function sum_char_codes(n: string): number{
+    let sum = 0;
+    for (let i =0; i &lt; n.length; i++){
+        sum += n.charCodeAt(i);
+    }
+    return sum;
+} 
 
-func (t *Trip) CalculateCancellationFee() float64 { //implements reservation interface
-    total:= 0.0
+for loop has to execute length of string 
+for one more unit of string is one more loop.
+- linear complexity 
 
-    for _, r:= range(t.reservations) {
-        total += r.CalculateCancellationFee()
+</code></pre><pre tabindex="0"><code>function sum_char_codes(n: string): number{
+    let sum = 0;
+    for (let i =0; i &lt; n.length; i++){
+        sum += n.charCodeAt(i);
     }
 
-    return total
-}
+    for (let i =0; i &lt; n.length; i++){
+        sum += n.charCodeAt(i);
+    }
+   return sum;
+} 
 
-func (t *Trip) AddReservation (r Reservation) {
-    t.reservations = append(t.reservations, r)
-}
-</code></pre><h2 id="liskov-substitution-principle">Liskov Substitution Principle</h2>
-<p>Derived types must be substitutable for their base types.</p>
-<p>derived classes must be usablethrough the base class interface without
-the need for the client to know the specific derived class.
-s
-The interface should be able to suffice for all structs that implement that interface.</p>
-<pre tabindex="0"><code>The client who wants to compute the cancellation fee for a trip does not care about the specific type of reservations in the trip.
- The trip's code does not know how each reservation computes the cancellation fee.
-</code></pre><h2 id="integration-segregation-principle">Integration Segregation Principle</h2>
-<p>Many client specific interfaces are better than one general purpose interface
-avoid derived classes implementing unrelated methods.</p>
-<p>base reservation interface then have specific types of reservations with
-specialised methods.</p>
-<h2 id="dependancy-inversion-principle">Dependancy Inversion Principle</h2>
-<p>Depend on abstractions and not concretions</p>
-<pre tabindex="0"><code>Every package should have interfaces that advertise functionality without the
-implementation specifics.
+2. Drop constants 
+O(2N) -&gt; O(N)
 
-when a package needs a dependancy it should take it as a parameters
+</code></pre><pre tabindex="0"><code>function sum_char_codes(n: string): number{
+    let sum = 0;
+    for (let i =0; i &lt; n.length; i++){
+       const charCode = n.charCodeAt(i);
+       //E
+       if(charCode === 69) {
+        return sum;
+       }
+       sum += charCode;
+    }
+   return sum;
+} 
 
-Higher level modules should depend on intefaces and not concrete implementations.
+3. worse case 
+still O(n)
+
+</code></pre><p>o(1) - constant time same set of operations instant</p>
+<p>o(logn) - logn  binary search trees - half the amount of input you have to search but only look at one point at a time.</p>
+<p>o(n) - linear</p>
+<p>o(nlogn) - nlogn Quick Sort (go over everything but search half)</p>
+<p>o(n^2) - n squared</p>
+<pre tabindex="0"><code>function sum_char_codes(n: string): number{
+    let sum = 0;
+    for (let i =0; i &lt; n.length; i++){
+         const charCode = n.charCodeAt(i);
+         for (let j =0; j &lt; n.length; j++){
+            sum += charCode;
+         }
+    }
+    return sum;
+} 
 
 
-</code></pre></section>
+</code></pre><p>o(n^3) - n cubed</p>
+<pre tabindex="0"><code>function sum_char_codes(n: string): number{
+    let sum = 0;
+    for (let i =0; i &lt; n.length; i++){
+         const charCode = n.charCodeAt(i);
+         for (let j =0; j &lt; n.length; j++){
+             for (let k =0; k &lt; n.length; k++){
+                sum += charCode;
+             }
+         }
+    }
+    return sum;
+} 
+
+</code></pre><p>o(sqrt(n))</p>
+<p>o(2^n)
+o(n!)</p>
+<p>Big O upper bound of runtime there are others.</p>
+<h2 id="array-data-structure">Array Data Structure</h2>
+<p>const a = [];
+Contiguous (unbreaking) memory space (contains a certain number of bytes)</p>
+<pre tabindex="0"><code>//NodeJs
+
+const a = new ArrayBuffer(6); // bytelength = 6 
+const a8 = new Unit8Array(a);
+- unsigned 8 bit numbers (0-255)
+a8[0] = 45; //set first byte (decimal)
+a8[2] = 45; //set 2nd byte (decimal)
+const a16 = new Unit16Array(a);
+a16[2] = 0x4545 (heximdecimal) 
+
+&lt;2d 00 2d 45 45&gt; byte length 6 (walk through array 8bit units, 16bit units)
+
+</code></pre><p>array insert overwrites -&gt; cannot not grow array without reallocations
+delete at index -&gt;
+insert at index -&gt; (a + width*offset)</p>
+<p>static array has no methods like push or pop</p>
+<p>//up to trees</p>
+</section>
 
   
   
@@ -376,10 +430,16 @@ Higher level modules should depend on intefaces and not concrete implementations
     
     <a
       class="flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
-      href="https://devblog-2u3g.onrender.com/posts/archive/database_design/"
-      ><span class="mr-1.5">←</span><span>Database Design</span></a
+      href="https://devblog-2u3g.onrender.com/posts/archive/bigo-brian-holt/"
+      ><span class="mr-1.5">←</span><span>Big O - Brian Holt Course</span></a
     >
     
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/go_style_notes/"
+      ><span>Go Style Guide</span><span class="ml-1.5">→</span></a
+    >
     
   </nav>
   

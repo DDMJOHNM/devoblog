@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Big O - Brian Holt Course - Devblog</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  <meta name="description" content="BO important details of an algorithm
+3x2&#43;x&#43;1 o(n2) look for the biggest term carries most of the weight of the algorithm
+Complexity O(n) - goes through all the items in the loops eg for loop v size of input array n is length of the array
+no loops constant
+big o ignores coeficient just looking for loops
+function find(needle, haystack){ for (var i=0; i &lt; haystack.length; i&#43;&#43;) { if (haystack === needle) return true; } } still o(n) worst case scenario - last item in array best case scenario - first item in the array bigO doesnt care" />
+  <meta name="author" content="John Mason" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="https://devblog-2u3g.onrender.com/main.min.css" />
+
+  
+
+  
+     
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/theme.svg" />
+
+  
+  
+  
+  <link rel="preload" as="image" href="GRAVATAR_CDN_LINK6fd8df4abe41f17fd8e2dd7d97b5cc8c?s=160&amp;d=identicon" />
+  
+  
+
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/github.svg" />
+  
+  <link rel="preload" as="image" href="https://devblog-2u3g.onrender.com/linkedin.svg" />
+  
+  
+
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+  onload="renderMathInElement(document.body);"
+></script>
+
+  
+  
+  
+
+  
+  <link rel="icon" href="https://devblog-2u3g.onrender.com/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://devblog-2u3g.onrender.com/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.91.2" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="Big O - Brian Holt Course" />
+<meta property="og:description" content="BO important details of an algorithm
+3x2&#43;x&#43;1 o(n2) look for the biggest term carries most of the weight of the algorithm
+Complexity O(n) - goes through all the items in the loops eg for loop v size of input array n is length of the array
+no loops constant
+big o ignores coeficient just looking for loops
+function find(needle, haystack){ for (var i=0; i &lt; haystack.length; i&#43;&#43;) { if (haystack === needle) return true; } } still o(n) worst case scenario - last item in array best case scenario - first item in the array bigO doesnt care" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://devblog-2u3g.onrender.com/posts/archive/bigo-brian-holt/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-12-13T16:56:59+13:00" />
+<meta property="article:modified_time" content="2024-12-13T16:56:59+13:00" />
+
+
+  
+  <meta itemprop="name" content="Big O - Brian Holt Course">
+<meta itemprop="description" content="BO important details of an algorithm
+3x2&#43;x&#43;1 o(n2) look for the biggest term carries most of the weight of the algorithm
+Complexity O(n) - goes through all the items in the loops eg for loop v size of input array n is length of the array
+no loops constant
+big o ignores coeficient just looking for loops
+function find(needle, haystack){ for (var i=0; i &lt; haystack.length; i&#43;&#43;) { if (haystack === needle) return true; } } still o(n) worst case scenario - last item in array best case scenario - first item in the array bigO doesnt care"><meta itemprop="datePublished" content="2024-12-13T16:56:59+13:00" />
+<meta itemprop="dateModified" content="2024-12-13T16:56:59+13:00" />
+<meta itemprop="wordCount" content="877">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Big O - Brian Holt Course"/>
+<meta name="twitter:description" content="BO important details of an algorithm
+3x2&#43;x&#43;1 o(n2) look for the biggest term carries most of the weight of the algorithm
+Complexity O(n) - goes through all the items in the loops eg for loop v size of input array n is length of the array
+no loops constant
+big o ignores coeficient just looking for loops
+function find(needle, haystack){ for (var i=0; i &lt; haystack.length; i&#43;&#43;) { if (haystack === needle) return true; } } still o(n) worst case scenario - last item in array best case scenario - first item in the array bigO doesnt care"/>
+
+  
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="https://devblog-2u3g.onrender.com"
+      >Devblog</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
+  </div>
+
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
+
+  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
+
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./github.svg)"
+        href="https://github.com/DDMJOHNM"
+        target="_blank"
+        rel="me"
+      >
+        github
+      </a>
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./linkedin.svg)"
+        href="https://linkedin.com/in/john-mason-08698bb1"
+        target="_blank"
+        rel="me"
+      >
+        linkedin
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Big O - Brian Holt Course</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Dec 13, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><p>BO important details of an algorithm</p>
+<p>3x2+x+1 o(n2)
+look for the biggest term
+carries most of the weight of the algorithm</p>
+<p>Complexity O(n) - goes through all the items in the loops
+eg for loop v size of input array
+n is length of the array</p>
+<p>no loops constant</p>
+<p>big o ignores coeficient just looking for loops</p>
+<pre tabindex="0"><code>function find(needle, haystack){
+    for (var i=0; i &lt; haystack.length; i++) {
+        if (haystack === needle) return true;
+    }   
+}
+
+</code></pre><p>still o(n)
+worst case scenario - last item in array
+best case scenario - first item in the array
+bigO doesnt care</p>
+<p>pair of values
+nested loops
+o(n) &ndash;&gt; Linear
+o(n2)  &mdash;-&gt; n squared (Quadratic Time)
+o(n3)  &mdash;-&gt; n cubed -NO</p>
+<pre tabindex="0"><code>makeTuples(input){
+    var answer = [];
+      for (var i=0; i &lt; input.length; i++) {
+        for (var j=0; j &lt; input.length; j++) {
+            answer.push(input[i], input[j]) 
+        } 
+      } 
+      return answer;
+}
+
+</code></pre><p>Algorithms - designed different problems</p>
+<p>Trade offs better v worse complexity</p>
+<pre tabindex="0"><code>function getMiddleOfArray(array){
+    return array[Math.floor(array.length/2)]
+}
+</code></pre><p>Constant Time
+o(1) - doesnt matter how long the array is still takes the same amount of time to do</p>
+<p>graph
+(y) how long it takes the fucntion to run
+(x) number of items in the array</p>
+<p>Logrithmic time (1000 v 100 items not that much more time)
+algorithm to divide into chunks</p>
+<p>more inputs will it take longer not just for loops</p>
+<p>Question &ndash;&gt; it depends i need more information
+ie how big is the system</p>
+<p>make more maintainable code v making faster</p>
+<p>science of trade offs</p>
+<ul>
+<li>one tool is big O</li>
+</ul>
+<p>Complete picture of what the requirements are</p>
+<p>(helps to choose correct algoithm)
+end user
+constraints
+devices - where what
+how big is the data set
+how important to the user
+what are the user doing</p>
+<p>time (computational complexity) - how long it takes to run<br>
+space complexity (space)</p>
+<p>==================================================================</p>
+<h2 id="trade-offs">Trade offs</h2>
+<p>(problem constraits)
+discuss trade offs (money v customer experience)
+based on constraints</p>
+<p>code smells - might be a bad idea
+could this be done better (what is better in the particular case)</p>
+<p>multiple choices - no rules
+some times upu cant ignore the incidentials
+eg for loop with 10000 line of code in it</p>
+<p>sometime bigo bad to use
+job happens once a day took 30 mins - dont optimise, doesnt matter</p>
+<p>readibility and maintainability most important things in code
+(code is communication) future self future devs
+only go for n code if constraints actually called for</p>
+<p>simple code less bugs</p>
+<p>human time is more valuable teh computer time</p>
+<p>don&rsquo;t prematurely optimise</p>
+<p>99% time features are built into languages or existing module</p>
+<p>Load Testing - relative to customer base</p>
+<h2 id="bubble-sort">Bubble sort</h2>
+<p>one number is biogger than another in the array swap
+go through and nothing swaps done
+end of array then start again</p>
+<ul>
+<li>larger item bubble to top</li>
+<li>look at less and less of the array</li>
+</ul>
+<p>av case on2
+every item will see every item in the array
+worst case
+reverse sorted list
+best case n
+sorted list</p>
+<ul>
+<li>spacial complexity constant</li>
+</ul>
+<p>outer while loop
+inner for loop</p>
+<ul>
+<li>destructive operates on array itself</li>
+</ul>
+<h3 id="example">Example</h3>
+<pre tabindex="0"><code>function bubbleSort(nums) {
+  // code goes here
+  // let i = 0;
+  // do {
+  //   i = i + 1
+  //   for (j = 0; j &lt; nums.length; j++) {
+  //     if (nums[i] &lt; nums[j]) {
+  //         nums[i] = nums[j]
+  //     } else {
+  //       break;
+  //     }
+  //   } 
+
+  // } while (i &lt;  nums.length - 1);
+
+  let swapped = false;
+  
+  do {
+    swapped = false;
+    for ( i=0; i &lt; nums.length; i++) {
+      if(nums[i] &gt; nums[i+1]){
+        const temp = nums[i];
+        nums[i] = nums[i+1];
+        nums[i+1] = temp;
+        swapped = true; 
+      }
+    }
+  
+  } while (swapped)  
+   return nums; 
+}
+
+// unit tests
+// do not modify the below code
+test.skip(&quot;bubble sort&quot;, function () {
+  const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+  const sortedNums = bubbleSort(nums);
+  expect(sortedNums).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+});
+
+
+</code></pre><h2 id="insertion-sort">Insertion Sort</h2>
+<p>array of length one always sorted
+index one insert in a sorted way</p>
+<p>[3,2,5,4,1]
+is larger than 3 no move to the right
+Begining of list insert 2 at index 0
+is index 4 larger than 5 no move 5 to the right
+is index 4 larger than 3 yes
+insert after 3 and index 2
+[2,3,4,5,1]</p>
+<p>best case nothing has to shift
+average case mostly sorted
+worse case sorted reverse</p>
+<p>on2 with better coeficients</p>
+<p>**  most or totally sorted lists</p>
+<p>spatial complexity constant time</p>
+<p>Stable</p>
+<p>Example</p>
+<pre tabindex="0"><code>
+function insertionSort(nums) {
+  // code goes here
+  //first item always sorted
+  for (let i = 0; i &lt; nums.length; i++) {//forwards    
+    let numberToInsert = nums[i]
+    let j;
+    //everything before i is the sorted elements  of the array  
+    //greater than the number to insert and greater than 0
+    for (j=i-1; nums[j] &gt; numberToInsert &amp;&amp; j &gt;=0; j--){
+      //if number in the right place assigns to itself 
+      nums[j+1] = nums[j] //moves forward 1
+    } 
+    //j works backwards through sorted part of array to insert the next thing
+    nums[j+1] = numberToInsert; //inserts number into exact space
+  } 
+  return nums;
+
+}
+
+// unit tests
+// do not modify the below code
+test(&quot;insertion sort&quot;, function () {
+  const nums = [10, 5, 3, 8, 2, 6, 4, 7, 9, 1];
+  insertionSort(nums);
+  expect(nums).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+});
+
+
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="mt-24 flex rounded-lg bg-black/[3%] text-lg dark:bg-white/[8%]">
+    
+    
+    <a
+      class="ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline hover:bg-black/[2%] dark:hover:bg-white/[3%]"
+      href="https://devblog-2u3g.onrender.com/posts/big_o/"
+      ><span>Big O Notation</span><span class="ml-1.5">→</span></a
+    >
+    
+  </nav>
+  
+
+  
+  
+
+  
+  
+  <div class="mt-24" id="graphcomment"></div>
+  <script type="text/javascript">
+    var __semio__params = {
+      graphcommentId: 'YOUR_GRAPH_COMMENT_ID',
+      behaviour: {
+        
+      },
+      
+    };
+
+    function __semio__onload() {
+      __semio__gc_graphlogin(__semio__params);
+    }
+
+    (function () {
+      var gc = document.createElement('script');
+      gc.type = 'text/javascript';
+      gc.async = true;
+      gc.onload = __semio__onload;
+      gc.defer = true;
+      gc.src =
+        'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+      (
+        document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]
+      ).appendChild(gc);
+    })();
+  </script>
+  
+</article>
+
+
+    </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2025
+    <a class="link" href="https://devblog-2u3g.onrender.com">Devblog</a>
+  </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
+
+  </body>
+</html>
